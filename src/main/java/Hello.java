@@ -10,6 +10,5 @@ public class Hello {
         System.out.println("Nice to meet you, "+name+"!");
         System.out.println("Bye!");
 
-        System.out.println("Test");
     }
 }
