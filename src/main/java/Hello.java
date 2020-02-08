@@ -6,8 +6,8 @@ public class Hello {
         Scanner in = new Scanner(System.in);
         System.out.println("Hello, what is your name?");
         String name=in.next();
-        System.out.println("Hello, "+name+"!");
-        System.out.println("Nice to meet you, "+name+"!");
+        System.out.printf("Hello, %s!\n",name);
+        System.out.printf("Nice to meet you, %s!\n ",name);
         System.out.println("Bye!");
 
     }
