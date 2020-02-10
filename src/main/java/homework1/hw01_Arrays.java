@@ -17,6 +17,7 @@ public class hw01_Arrays {
         System.out.println("What is your name?");
         String name= in.nextLine();
 
+       // int LEN=0;
         int i=0;
         int[] arr=new int[100];
         //3.Compare the number
@@ -24,10 +25,10 @@ public class hw01_Arrays {
         while(true){
             System.out.println("Please, enter the number:");
             int number=in.nextInt();
-
+            //Add number to array
             arr[i] = number;
             i++;
-
+            //Compare numbers
             if (number<rd_number){
                 System.out.println("Your number is too small. Please, try again.");
             }
@@ -37,19 +38,12 @@ public class hw01_Arrays {
             }
             else {
                 System.out.printf("Congratulations, %s\n", name);
-//                System.out.print(arr[i] + "\t");
-                for (int j = 0; j < arr.length; j++) {
-                    System.out.println(arr[j]);
-
+                //Print previous input numbers
+                for (int j = 0; j < i; j++) {
+                    System.out.print(arr[j]+"\t");
                 }
-
                 break;
             }
-
-
         }
-
-
-
     }
 }
