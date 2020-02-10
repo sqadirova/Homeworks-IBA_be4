@@ -7,8 +7,6 @@ public class hw01_Arrays {
 
     public static void main(String[] args) {
 
-        //int len_array=0;
-
         //1. Random number
         int max=100;
         int rd_number=(int)(Math.random()*(max+1));    //[0,100]
@@ -26,21 +24,25 @@ public class hw01_Arrays {
         while(true){
             System.out.println("Please, enter the number:");
             int number=in.nextInt();
-           // len_array++;
+
             arr[i] = number;
             i++;
 
             if (number<rd_number){
                 System.out.println("Your number is too small. Please, try again.");
-
             }
             else if (number>rd_number)
             {
                 System.out.println("Your number is too big. Please, try again.");
-            }else {
+            }
+            else {
                 System.out.printf("Congratulations, %s\n", name);
-                System.out.print(arr[i] + "\t");
-//                int[] guessnumbers = new int[len_array];
+//                System.out.print(arr[i] + "\t");
+                for (int j = 0; j < arr.length; j++) {
+                    System.out.println(arr[j]);
+
+                }
+
                 break;
             }
 
