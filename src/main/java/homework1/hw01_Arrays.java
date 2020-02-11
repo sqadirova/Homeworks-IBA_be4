@@ -5,6 +5,23 @@ import java.util.Scanner;
 
 public class hw01_Arrays {
 
+//    private static void bubbleSort(int[] arr,int len) {
+//        int n = arr.length;
+//        int temp = 0;
+//        for (int k = 0; k < len; k++) {
+//            for (int j = 1; j < (n - k); j++) {
+//                if (arr[j - 1] > arr[j]) {
+//                    temp = arr[j - 1];
+//                    arr[j - 1] = arr[j];
+//                    arr[j] = temp;
+//                }
+//
+//            }
+//            System.out.print(arr[k]);
+//
+//        }
+//    }
+
     public static void main(String[] args) {
 
         //1. Random number
@@ -17,7 +34,6 @@ public class hw01_Arrays {
         System.out.println("What is your name?");
         String name= in.nextLine();
 
-       // int LEN=0;
         int i=0;
         int[] arr=new int[100];
         //3.Compare the number
@@ -27,7 +43,7 @@ public class hw01_Arrays {
             int number=in.nextInt();
             //Add number to array
             arr[i] = number;
-            i++;
+            i++;      //length of array
             //Compare numbers
             if (number<rd_number){
                 System.out.println("Your number is too small. Please, try again.");
@@ -39,11 +55,22 @@ public class hw01_Arrays {
             else {
                 System.out.printf("Congratulations, %s\n", name);
                 //Print previous input numbers
+                System.out.print("Your numbers: ");
                 for (int j = 0; j < i; j++) {
                     System.out.print(arr[j]+"\t");
                 }
+                //bubbleSort(arr);
+//                System.out.print("After sorting your numbers: ");
+//                for (int j = 0; j < i; j++) {
+//                    System.out.print(arr[j]+"\t");
+//                }
                 break;
             }
         }
+
+
     }
+
+
+
 }

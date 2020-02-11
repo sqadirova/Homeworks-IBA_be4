@@ -1,4 +1,4 @@
-package warmup_tasks;
+package warmup_tasks.lesson02;
 
 import java.util.Arrays;
 import java.util.Scanner;
