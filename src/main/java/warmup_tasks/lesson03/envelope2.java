@@ -21,7 +21,6 @@ public class envelope2 {
                 else {envelope.append(" ");}
             }
             envelope.append("\n");
-
         }
         System.out.println(envelope);
     }
