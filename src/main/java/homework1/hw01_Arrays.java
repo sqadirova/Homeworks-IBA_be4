@@ -5,22 +5,19 @@ import java.util.Scanner;
 
 public class hw01_Arrays {
 
-//    private static void bubbleSort(int[] arr,int len) {
-//        int n = arr.length;
-//        int temp = 0;
-//        for (int k = 0; k < len; k++) {
-//            for (int j = 1; j < (n - k); j++) {
-//                if (arr[j - 1] > arr[j]) {
-//                    temp = arr[j - 1];
-//                    arr[j - 1] = arr[j];
-//                    arr[j] = temp;
-//                }
-//
-//            }
-//            System.out.print(arr[k]);
-//
-//        }
-//    }
+    private static void sortingNumbers(int[] arr,int len) {
+        int temp = 0;
+        for (int k = 0; k < len; k++) {
+            for (int j = 1; j < (len - k); j++) {
+                if (arr[j - 1] < arr[j]) {
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+
+            }
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -54,23 +51,16 @@ public class hw01_Arrays {
             }
             else {
                 System.out.printf("Congratulations, %s\n", name);
-                //Print previous input numbers
+
+                sortingNumbers(arr,i);
+
                 System.out.print("Your numbers: ");
                 for (int j = 0; j < i; j++) {
-                    System.out.print(arr[j]+"\t");
+                    System.out.print(arr[j]+",");
                 }
-                //bubbleSort(arr);
-//                System.out.print("After sorting your numbers: ");
-//                for (int j = 0; j < i; j++) {
-//                    System.out.print(arr[j]+"\t");
-//                }
                 break;
             }
         }
-
-
     }
-
-
 
 }
