@@ -103,16 +103,34 @@ public class hw04 {
         pet.foul();
     }
 
-    public static void main(String[] args) {
-        Human mother = new Human();   //mother
-        Human father = new Human();   //father
-        Human child = new Human();   //child
-        Pet pet1 = new Pet();
-        Pet pet2 = new Pet();
-
-       passDatatoVars(pet1,pet2,mother,father,child);
-       printChild(child);
-       printChildsPet(pet2);
-
+    public static void printMother(Human mother) {
+        System.out.println(mother.toString());
+        mother.greetPet();
+        mother.describePet();
     }
+
+    public static void printFather(Human father) {
+        System.out.println(father.toString());
+        father.greetPet();
+        father.describePet();
+    }
+
+
+        public static void main(String[] args) {
+            Human mother = new Human();   //mother
+            Human father = new Human();   //father
+            Human child = new Human();   //child
+            Pet pet1 = new Pet();
+            Pet pet2 = new Pet();
+
+            passDatatoVars(pet1, pet2, mother, father, child);
+
+            printChild(child);
+            printChildsPet(pet2);
+
+            System.out.println();
+            printMother(mother);
+            printFather(father);
+
+        }
 }
