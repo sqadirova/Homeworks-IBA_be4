@@ -1,8 +1,5 @@
 package homework4;
 
-import java.text.Format;
-import java.util.Scanner;
-
 public class hw04 {
     //method for initializing schedule array
     public static String[][] schedule() {
@@ -85,6 +82,27 @@ public class hw04 {
         return human;
     }
 
+    public static void passDatatoVars(Pet _pet1,Pet _pet2,Human mother,Human father,Human child){
+        _pet1 = pet1Display(_pet1);
+        _pet2 = pet2Display(_pet2);
+        mother = motherDisplay(mother, _pet1);
+        father = fatherDisplay(father, _pet1);
+        child = childDisplay(child, mother, father, _pet2);
+    }
+
+    public static void printChild(Human child){
+        System.out.println(child.toString());
+        child.greetPet();
+        child.describePet();
+    }
+
+    public static void printChildsPet(Pet pet){
+        System.out.println(pet.toString());
+        pet.respond();
+        pet.eat();
+        pet.foul();
+    }
+
     public static void main(String[] args) {
         Human mother = new Human();   //mother
         Human father = new Human();   //father
@@ -92,34 +110,9 @@ public class hw04 {
         Pet pet1 = new Pet();
         Pet pet2 = new Pet();
 
-        Scanner in = new Scanner(System.in);
-
-        pet1 = pet1Display(pet1);
-        pet2 = pet2Display(pet2);    //child's pet
-        mother = motherDisplay(mother, pet1);  //mother
-        father = fatherDisplay(father, pet1);  //father
-        child = childDisplay(child, mother, father, pet2);  //child
-
-
-
-        System.out.println(child.toString());
-        child.greetPet();
-        child.describePet();
-
-        System.out.println(pet2.toString());
-        pet2.respond();
-        pet2.eat();
-        pet2.foul();
-
-
-
-//        System.out.println(pet2.toString());
-//
-//        System.out.println(human1.toString());
-//
-//        System.out.println(human2.toString());
-
-
+       passDatatoVars(pet1,pet2,mother,father,child);
+       printChild(child);
+       printChildsPet(pet2);
 
     }
 }
