@@ -8,7 +8,7 @@ public class Human {
     String surname;
     int year;
     int iq;
-    Pet pet = new Pet();
+    Pet pet;
 //    Human mother;
 //    Human father;
     String mother;
