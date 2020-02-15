@@ -44,17 +44,13 @@ public class arrays {
         //comb-5=even-2
 
         int n=0;
-        for (int k = 0; k <combine.length ; k=k+2) {
-                combine[k]=odd[n];
+        for (int k = 0; k <10 ; k++) {
+                combine[n]=odd[k];
                 n++;
-
+                combine[n]=even[k];
+                n++;
         }
-        int a=0;
-        for (int k = 1; k <combine.length ; k=k+2) {
-            combine[k]=even[a];
-            a++;
 
-        }
 
         System.out.print("Odd:");
         for (int i = 0; i < odd.length; i++) {
