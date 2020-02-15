@@ -2,11 +2,8 @@ package warmup_tasks.lesson05;
 
 public class arrays {
 
-    public static void main(String[] args) {
+    public static int[] fill(int[] odd,int[] even){
         int MAX = 10;
-        //declare
-        int[] odd = new int[MAX];     //tek
-        int[] even = new int[MAX];    //cut
         int combLen = odd.length + even.length;
         int[] combine = new int[combLen];
 
@@ -24,6 +21,16 @@ public class arrays {
                 even[j] = rd_num;
             }
         }
+        return combine;
+    }
+
+    public static void main(String[] args) {
+
+        //declare
+        int[] odd = new int[10];     //tek
+        int[] even = new int[10];    //cut
+
+        int[] combine=fill(odd,even);
 
         //odd={1,2,3,4,5,6,7,8,9,10}
         //even={10,9,8,7,6,5,4,3,2,1}
@@ -66,8 +73,6 @@ public class arrays {
             System.out.print(combine[m]+"\t");
         }
     }
-
-
 
     }
 
