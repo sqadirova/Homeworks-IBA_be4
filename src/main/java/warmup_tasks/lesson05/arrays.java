@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class arrays {
 
-    public static int[] fill(int[] odd,int[] even,int[] combine){
+   /* public static int[] fill(int[] odd, int[] even, int[] combine) {
         int MAX = 10;
 
         //fill odd
@@ -22,17 +22,27 @@ public class arrays {
             }
         }
         return combine;
-    }
+    }*/
+   public static void fill(int[] odd, int[] even) {
+       int SIZE = 10;
+
+       //fill odd and even arrays
+       for (int i = 0; i < odd.length; i++) {
+           even[i]=(int) (Math.random() * SIZE)*2;
+           odd[i]=(int) (Math.random() * SIZE)*2+1;
+       }
+
+   }
 
     public static void main(String[] args) {
 
-        int n=10;
+        int SIZE = 10;
         //declare
-        int[] odd = new int[n];     //tek
-        int[] even = new int[n];    //cut
-        int[] combine = new int[2*n];
+        int[] odd = new int[SIZE];     //tek
+        int[] even = new int[SIZE];    //cut
+        int[] combine = new int[2 * SIZE];
 
-        combine=fill(odd,even,combine);
+        fill(odd, even);
 
         /*odd={1,2,3,4,5,6,7,8,9,10}
         even={10,9,8,7,6,5,4,3,2,1}
@@ -44,23 +54,27 @@ public class arrays {
         comb-3=even-1
         comb-4=odd2
         comb-5=even-2*/
-
+        /*
         int j=0;
-        for (int k = 0; k <10 ; k++) {
+        for (int k = 0; k <SIZE ; k++) {
                 combine[j]=odd[k];
                 j++;
                 combine[j]=even[k];
                 j++;
+        }*/
+
+        for (int k = 0; k < SIZE; k++) {
+            combine[k * 2] = odd[k];
+            combine[k * 2 + 1] = even[k];
         }
-
         //print combine
-//        for(int m = 0; m < combine.length; m++) {
-//            System.out.print(combine[m]+"\t");
-//        }
-        System.out.printf("Odds: %s\n",Arrays.toString(odd));
-        System.out.printf("Evens: %s\n",Arrays.toString(even));
-        System.out.printf("Combined: %s\n",Arrays.toString(combine));
+        /*    for(int m = 0; m < combine.length; m++) {
+            System.out.print(combine[m]+"\t");
+        }*/
+        System.out.printf("Odds: %s\n", Arrays.toString(odd));
+        System.out.printf("Evens: %s\n", Arrays.toString(even));
+        System.out.printf("Combined: %s\n", Arrays.toString(combine));
     }
 
-    }
+}
 
