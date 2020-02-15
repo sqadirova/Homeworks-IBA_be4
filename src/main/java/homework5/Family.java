@@ -1,5 +1,6 @@
 package homework5;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -8,7 +9,11 @@ public class Family {
     private Human father;
     private Human[] children;
     private Pet pet;
-    private int count;
+    private static int count=0;
+
+    {
+        count++;
+    }
 
     public Human getMother() {
         return mother;
@@ -64,16 +69,18 @@ public class Family {
     }
 
     public void addChild(Human child) {
-
+        ArrayList<Human> temp=new ArrayList<Human>(Arrays.asList(children));
+        temp.add(child);
+        temp.toArray();
     }
 
     public void deleteChild(Human child) {
 
     }
 
-    public int countFamily(){
-       return count;   //??
-    }
+//    public int countFamily(){
+//       return count++;   //??
+//    }
 
     @Override
     public boolean equals(Object o) {
