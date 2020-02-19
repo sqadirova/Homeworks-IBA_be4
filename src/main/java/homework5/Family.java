@@ -61,8 +61,8 @@ public class Family {
     }
 
 
-    public Human[] addChild(Human child) {
-        List<Human> temp= new ArrayList<>(Arrays.asList(children));
+    public Human[] addChild(Human[] obj,Human child) {
+        ArrayList<Human> temp= new ArrayList<Human>(Arrays.asList(obj));
         temp.add(child);
         count++;
         return temp.toArray(new Human[0]);    //?

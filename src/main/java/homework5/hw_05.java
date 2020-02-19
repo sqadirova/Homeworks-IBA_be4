@@ -25,22 +25,22 @@ public class hw_05 {
     public static void main(String[] args) {
         String[] habits={"eat","DRINK","sleep"};
 
-
         Human child1=new Human("Sidiqa","Qadirova",1997,80);
         Human child2=new Human("Leyla","Qadirova",1993,80);
         Human child3=new Human("Ali","Qadirov",2001,80);
+       // Human child4=new Human("Hasan","Qadirov",1991,80);
         Human mother=new Human("Sevda","Qadirova",1967,80);
         Human father=new Human("Seyran","Qadirov",1963,80);
         Pet pet1=new Pet("cat","mikky",3,70,habits);
         Family family1=new Family();
-        Human[] children={child1,child2};   //?
+        Human[] children ={child1,child2};
+        Human[] newchild=family1.addChild(children,child3);
+        //Human[] newchild=family1.addChild(children,child4);
         family1.setMother(mother);
         family1.setFather(father);
         family1.setPet(pet1);
-        family1.setChildren(children);
-
-        children=family1.addChild(child3);   //?
-
+        family1.setChildren(newchild);
+       // family1.setChildren(newchild);
 
         System.out.println(child1.toString());
         System.out.println(child2.toString());
