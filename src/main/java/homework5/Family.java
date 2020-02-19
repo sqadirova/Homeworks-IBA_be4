@@ -1,7 +1,9 @@
 package homework5;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Family {
@@ -9,11 +11,11 @@ public class Family {
     private Human father;
     private Human[] children;
     private Pet pet;
-    private static int count=0;
+    private static int count=2;
 
-    {
-        count++;
-    }
+//    {
+//        count++;
+//    }
 
     public Human getMother() {
         return mother;
@@ -58,36 +60,33 @@ public class Family {
         this.pet = pet;
     }
 
+
+    public Human[] addChild(Human child) {
+        List<Human> temp= new ArrayList<>(Arrays.asList(children));
+        temp.add(child);
+        count++;
+        return temp.toArray(new Human[0]);    //?
+    }
+
+    public boolean isdeletedChild(int index) {
+        ArrayList<Human> children = new ArrayList<Human>(Arrays.asList(getChildren()));
+        children.remove(index);
+        count--;
+        return true;
+    }
+
+    public int countFamily(){
+       return count;
+    }
+
     @Override
     public String toString() {
         return "Family{" +
-                "mother=" + mother +
-                ", father=" + father +
+                "mother=" + mother.getName()+" "+mother.getSurname()+
+                ", father=" + father.getName()+" "+father.getSurname() +
                 ", children=" + Arrays.toString(children) +
-                ", pet=" + pet +
+                ", pet=" +"{"+ pet.toString() +"}"+
                 '}';
-    }
-
-    public void addChild(Human child) {
-        ArrayList<Human> temp=new ArrayList<Human>(Arrays.asList(children));
-        temp.add(child);
-        temp.toArray();
-    }
-
-    public void deleteChild(Human child) {
-
-    }
-
-//    public int countFamily(){
-//       return count++;   //??
-//    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Family)) return false;
-        Family family = (Family) o;
-        return getPet().equals(family.getPet());
     }
 
 

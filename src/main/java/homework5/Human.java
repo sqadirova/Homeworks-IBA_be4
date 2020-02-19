@@ -10,7 +10,7 @@ public class Human {
     private String surname;
     private int year;
     private int iq;
-   private Pet pet;
+//   private Pet pet;
    private Family family;
     //    Human mother;
 //    Human father;
@@ -49,13 +49,13 @@ public class Human {
         this.iq = iq;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
+//    public Pet getPet() {
+//        return pet;
+//    }
+//
+//    public void setPet(Pet pet) {
+//        this.pet = pet;
+//    }
 
 
     public String[][] getSchedule() {
@@ -75,17 +75,17 @@ public class Human {
     }
 
     public void greetPet() {
-        System.out.printf("Hello, %s\n", pet.getNickname());
+        System.out.printf("Hello, %s\n", family.getPet().getNickname());
     }
 
     public void describePet() {
         String pettricklevel;
 
-        if (pet.getTrickLevel() > 50) pettricklevel = "very sly";
+        if (family.getPet().getTrickLevel() > 50) pettricklevel = "very sly";
         else pettricklevel = "almost not sly";
 
         System.out.printf("I have a %s, he is %d years old," +
-                " he is %s \n", pet.getSpecies(), pet.getAge(), pettricklevel);
+                " he is %s \n", family.getPet().getSpecies(), family.getPet().getAge(), pettricklevel);
     }
 
     //Human{name='Michael',
@@ -101,13 +101,12 @@ public class Human {
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", family=" + family +
                 ", schedule=" + Arrays.toString(schedule) +
                 '}';
     }
 
-    public Human() {
-    }
+//    public Human() {
+//    }
 
     public Human(String name, String surname, int year) {
         this.name = name;
@@ -123,32 +122,14 @@ public class Human {
         this.family = family;
     }
 
-    public Human(String name, String surname, int year, int iq, Pet pet, String[][] schedule) {
+    public Human(String name, String surname, int year, int iq ) {  //,Family family,String[][] schedule
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-        this.pet = pet;
+        this.family = family;
         this.schedule = schedule;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Human)) return false;
-        Human human = (Human) o;
-        return getYear() == human.getYear() &&
-                getIq() == human.getIq() &&
-                getName().equals(human.getName()) &&
-                getSurname().equals(human.getSurname()) &&
-                pet.equals(human.pet) &&
-                Arrays.equals(getSchedule(), human.getSchedule());
-    }
 
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(getName(), getSurname(), getYear(), getIq(), pet);
-        result = 31 * result + Arrays.hashCode(getSchedule());
-        return result;
-    }
 }

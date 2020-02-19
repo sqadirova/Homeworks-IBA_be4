@@ -79,8 +79,8 @@ public class Pet {
                 '}';
     }
 
-    public Pet() {
-    }
+//    public Pet() {
+//    }
 
     public Pet(String species, String nickname) {
         this.species = species;
@@ -96,22 +96,5 @@ public class Pet {
     }
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pet)) return false;
-        Pet pet = (Pet) o;
-        return getAge() == pet.getAge() &&
-                getTrickLevel() == pet.getTrickLevel() &&
-                getSpecies().equals(pet.getSpecies()) &&
-                getNickname().equals(pet.getNickname()) &&
-                Arrays.equals(getHabits(), pet.getHabits());
-    }
 
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(getSpecies(), getNickname(), getAge(), getTrickLevel());
-        result = 31 * result + Arrays.hashCode(getHabits());
-        return result;
-    }
 }
