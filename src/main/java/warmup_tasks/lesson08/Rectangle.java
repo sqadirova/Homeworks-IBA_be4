@@ -12,8 +12,6 @@ public class Rectangle extends Figure {
 
     @Override
     public int area() {
-        int s;
-        s=p1.x*p2.y;
-        return s;
+        return Math.abs(p1.x-p2.x)*Math.abs(p2.y-p2.y);
     }
 }
