@@ -2,12 +2,12 @@ package warmup_tasks.lesson08;
 
 public class Circle extends Figure {
     Point p1;
-    Point p2;
+    int radius;
 
 
-    public Circle(Point p1,Point p2) {
+    public Circle(Point p1,int radius) {
         this.p1 = p1;
-        this.p2=p2;
+        this.radius=radius;
     }
 
 //    @Override
@@ -18,15 +18,9 @@ public class Circle extends Figure {
     @Override
     public int area() {
         int s;
-        s=p1.x*p2.y;
+        s=p1.x*radius;
         return s;
     }
 
-    @Override
-    public String toString() {
-        return "Circle{" +
-                "p1=" + p1 +
-                ", p2=" + p2 +
-                '}';
-    }
+
 }

@@ -13,7 +13,7 @@ public class geometricFigures {
         p2.y = 4;
 
 
-        Figure f1 = new Circle(p1, p2);
+        Figure f1 = new Circle(p1, 4);
         Figure f2=new Rectangle(p1,p2);
         Figure f3=new Triangle(p1,p2,p3);
 
