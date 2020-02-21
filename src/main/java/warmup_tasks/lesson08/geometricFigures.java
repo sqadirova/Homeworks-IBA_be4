@@ -1,8 +1,14 @@
 package warmup_tasks.lesson08;
 
+import javax.swing.text.Utilities;
 import java.util.ArrayList;
 
 public class geometricFigures {
+    public void generateRandom(){
+        int r= (int) (Math.random()*10);
+
+    }
+
     public static void main(String[] args) {
 
        /* Point p1 = new Point(5,4);
