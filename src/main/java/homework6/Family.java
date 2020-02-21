@@ -62,7 +62,6 @@ public class Family {
     }
 
     public Human[] deleteChild_Index(Human[] childrenList, int index) {
-
         ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
         temp.remove(index);
         count--;
