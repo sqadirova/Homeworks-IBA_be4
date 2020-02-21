@@ -11,11 +11,7 @@ public class Family {
     private Human father;
     private Human[] children;
     private Pet pet;
-    private static int count=2;
-
-//    {
-//        count++;
-//    }
+    private static int count = 2;
 
     public Human getMother() {
         return mother;
@@ -23,6 +19,7 @@ public class Family {
 
     public void setMother(Human mother) {
         this.mother = mother;
+        count++;
     }
 
     public Human getFather() {
@@ -31,6 +28,7 @@ public class Family {
 
     public void setFather(Human father) {
         this.father = father;
+        count++;
     }
 
     public Human[] getChildren() {
@@ -39,6 +37,7 @@ public class Family {
 
     public void setChildren(Human[] children) {
         this.children = children;
+        count++;
     }
 
     public Pet getPet() {
@@ -47,9 +46,11 @@ public class Family {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+        count++;
     }
 
     public Family() {
+
 
     }
 
@@ -61,31 +62,40 @@ public class Family {
     }
 
 
-    public Human[] addChild(Human[] obj,Human child) {
-        ArrayList<Human> temp= new ArrayList<Human>(Arrays.asList(obj));
+    //    public Human[] addChild(Human[] obj,Human child) {
+//        ArrayList<Human> temp= new ArrayList<Human>(Arrays.asList(obj));
+//        temp.add(child);
+//        count++;
+//        return temp.toArray(new Human[0]);    //?
+//    }
+    public Human[] addChild(Human child,Human[] children_list) {
+        ArrayList<Human> temp = new ArrayList<Human>(Arrays.asList(children_list));
         temp.add(child);
         count++;
-        return temp.toArray(new Human[0]);    //?
+        return temp.toArray(children_list);    //?
     }
 
-    public boolean isdeletedChild(int index) {
-        ArrayList<Human> children = new ArrayList<Human>(Arrays.asList(getChildren()));
-        children.remove(index);
-        count--;
-        return true;
+    public boolean isdeletedChild(Human[] childrenList,int index) {
+        if (true) {
+            ArrayList<Human> temp = new ArrayList<Human>(Arrays.asList(childrenList));
+            temp.remove(index);
+            setChildren(temp.toArray(children));
+            count--;
+            return true;
+        } else return false;
     }
 
-    public int countFamily(){
-       return count;
+    public int countFamily() {
+        return count;
     }
 
     @Override
     public String toString() {
         return "Family{" +
-                "mother=" + mother.getName()+" "+mother.getSurname()+
-                ", father=" + father.getName()+" "+father.getSurname() +
+                "mother=" + mother.getName() + " " + mother.getSurname() +
+                ", father=" + father.getName() + " " + father.getSurname() +
                 ", children=" + Arrays.toString(children) +
-                ", pet=" +"{"+ pet.toString() +"}"+
+                ", pet=" + "{" + pet.toString() + "}" +
                 '}';
     }
 
