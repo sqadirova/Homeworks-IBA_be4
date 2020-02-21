@@ -23,73 +23,6 @@ public class hw04 {
         return _schedule;
     }
 
-    public static Pet pet1Display(Pet pet) {
-        pet.species = "dog";
-        pet.nickname = "Rock";
-        pet.age = 3;
-        pet.trickLevel = 70;
-        pet.habits = new String[]{"eat", "drink", "sleep"};
-        return pet;
-    }
-
-    public static Pet pet2Display(Pet pet) {
-        pet.species = "cat";
-        pet.nickname = "Zeus";
-        pet.age = 5;
-        pet.trickLevel = 75;
-        pet.habits = new String[]{"eat", "drink", "sleep"};
-        return pet;
-    }
-
-    public static Human motherDisplay(Human human, Pet _pet) {
-
-        //mother
-        human.name = "Jane";
-        human.surname = "Karleone";
-        human.year = 1967;
-        human.iq = 80;
-        //human.schedule = schedule();
-        human.mother= "Anna Austen";
-        human.father= "Ray Austen";
-        human.pet = _pet;
-        return human;
-    }
-
-    public static Human fatherDisplay(Human human, Pet _pet) {
-
-        //father
-        human.name = "Vito";
-        human.surname = "Karleone";
-        human.year = 1963;
-        human.iq = 80;
-        //human.schedule = schedule();
-        human.mother = "Janet Karleone";
-        human.father = "Jack Karleone";
-        human.pet = _pet;
-        return human;
-    }
-
-    public static Human childDisplay(Human human, Human _mother, Human _father, Pet _pet) {
-        //child
-        human.name = "Rachel";
-        human.surname = "Karleone";
-        human.year = 1994;
-        human.iq = 85;
-       // human.schedule = schedule();
-        human.mother = _mother.name;
-        human.father = _father.name;
-        human.pet = _pet;
-        return human;
-    }
-
-    public static void passDatatoVars(Pet _pet1,Pet _pet2,Human mother,Human father,Human child){
-        _pet1 = pet1Display(_pet1);
-        _pet2 = pet2Display(_pet2);
-        mother = motherDisplay(mother, _pet1);
-        father = fatherDisplay(father, _pet1);
-        child = childDisplay(child, mother, father, _pet2);
-    }
-
     public static void printChild(Human child){
         System.out.println(child.toString());
         child.greetPet();
@@ -117,13 +50,12 @@ public class hw04 {
 
 
         public static void main(String[] args) {
-            Human mother = new Human();   //mother
-            Human father = new Human();   //father
-            Human child = new Human();   //child
-            Pet pet1 = new Pet();
-            Pet pet2 = new Pet();
-
-            passDatatoVars(pet1, pet2, mother, father, child);
+            String[] habits = {"eat", "drink", "sleep"};
+            Pet pet1 = new Pet("dog","Rock",3,70,habits);
+            Pet pet2 = new Pet("cat","Zeus",5,75,habits);
+            Human mother = new Human("Jane","Karleone",1967,80,pet1,"Anna Austen","Ray Austen",schedule());   //mother
+            Human father = new Human("Vito","Karleone",1963,80,pet1,"Janet Karleone","Jack Karleone",schedule());   //father
+            Human child = new Human("Rachel","Karleone",1994,85,pet2,mother.name,father.name,schedule());   //child
 
             printChild(child);
             printChildsPet(pet2);
