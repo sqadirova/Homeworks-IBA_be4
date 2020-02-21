@@ -88,12 +88,6 @@ public class Human {
                 " he is %s \n", family.getPet().getSpecies(), family.getPet().getAge(), pettricklevel);
     }
 
-    //Human{name='Michael',
-    // surname='Karleone',
-    // year=1977,
-    // iq=90,
-    //schedule=[[day, task], [day_2, task_2]]
-
     @Override
     public String toString() {
         return "Human{" +

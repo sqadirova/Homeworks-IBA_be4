@@ -62,27 +62,19 @@ public class Family {
     }
 
 
-    //    public Human[] addChild(Human[] obj,Human child) {
-//        ArrayList<Human> temp= new ArrayList<Human>(Arrays.asList(obj));
-//        temp.add(child);
-//        count++;
-//        return temp.toArray(new Human[0]);    //?
-//    }
-    public Human[] addChild(Human child,Human[] children_list) {
-        ArrayList<Human> temp = new ArrayList<Human>(Arrays.asList(children_list));
+    public Human[] addChild(Human child, Human[] children_list) {
+        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(children_list));
         temp.add(child);
         count++;
-        return temp.toArray(children_list);    //?
+        return temp.toArray(children_list);
     }
 
-    public boolean isdeletedChild(Human[] childrenList,int index) {
-        if (true) {
-            ArrayList<Human> temp = new ArrayList<Human>(Arrays.asList(childrenList));
+    public boolean isdeleteChild(Human[] childrenList,int index) {
+            ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
             temp.remove(index);
-            setChildren(temp.toArray(children));
             count--;
+            setChildren(temp.toArray(childrenList));
             return true;
-        } else return false;
     }
 
     public int countFamily() {
@@ -98,6 +90,8 @@ public class Family {
                 ", pet=" + "{" + pet.toString() + "}" +
                 '}';
     }
+
+
 
 
 }

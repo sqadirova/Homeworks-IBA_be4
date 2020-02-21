@@ -37,26 +37,22 @@ public class hw_05 {
         Pet pet1 = new Pet("cat", "mikky", 3, 70, habits);
 
         Family family1 = new Family();
-        Human[] children = {child1, child2};
-        // Human[] newchild=family1.addChild(children,child3);
-        // family1.setChildren(newchild);
+        Human[] children = {child1};
+
         family1.setMother(mother);
         family1.setFather(father);
         family1.setPet(pet1);
-        family1.setChildren(family1.addChild(child3, children));
+        family1.setChildren(children);
+        family1.setChildren(family1.addChild(child2, family1.getChildren()));
+        family1.setChildren(family1.addChild(child3, family1.getChildren()));
+        family1.setChildren(family1.addChild(child4, family1.getChildren()));
 
-        System.out.printf("Count of family: %d\n", family1.countFamily());
-
-        System.out.println("Before deleting child:");
         System.out.println(family1.toString());
 
-        Boolean isDeleted = family1.isdeletedChild(children, 1);
+        family1.isdeleteChild(family1.getChildren(), 1);
+        family1.isdeleteChild(family1.getChildren(), 0);
 
-        System.out.println("After deleting child:");
-        System.out.println(family1.toString());
-
-
-
+        System.out.printf("After deleting child: %s\n", family1.toString());
 
     }
 }
