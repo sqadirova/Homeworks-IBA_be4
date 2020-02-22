@@ -10,10 +10,33 @@ public class Human {
     private String surname;
     private int year;
     private int iq;
-//   private Pet pet;
    private Family family;
-    //    Human mother;
-//    Human father;
+
+    //    public Human() {
+//    }
+
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+
+    }
+
+    public Human(String name, String surname, int year, Family family) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.family = family;
+    }
+
+    public Human(String name, String surname, int year, int iq ) {  //,Family family,String[][] schedule
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.family = family;
+        this.schedule = schedule;
+    }
 
     private String[][] schedule;
 
@@ -49,15 +72,6 @@ public class Human {
         this.iq = iq;
     }
 
-//    public Pet getPet() {
-//        return pet;
-//    }
-//
-//    public void setPet(Pet pet) {
-//        this.pet = pet;
-//    }
-
-
     public String[][] getSchedule() {
         return schedule;
     }
@@ -79,13 +93,13 @@ public class Human {
     }
 
     public void describePet() {
-        String pettricklevel;
+        String petTrickLevel;
 
-        if (family.getPet().getTrickLevel() > 50) pettricklevel = "very sly";
-        else pettricklevel = "almost not sly";
+        if (family.getPet().getTrickLevel() > 50) petTrickLevel = "very sly";
+        else petTrickLevel = "almost not sly";
 
         System.out.printf("I have a %s, he is %d years old," +
-                " he is %s \n", family.getPet().getSpecies(), family.getPet().getAge(), pettricklevel);
+                " he is %s \n", family.getPet().getSpecies(), family.getPet().getAge(), petTrickLevel);
     }
 
     @Override
@@ -98,32 +112,5 @@ public class Human {
                 ", schedule=" + Arrays.toString(schedule) +
                 '}';
     }
-
-//    public Human() {
-//    }
-
-    public Human(String name, String surname, int year) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-
-    }
-
-    public Human(String name, String surname, int year, Family family) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.family = family;
-    }
-
-    public Human(String name, String surname, int year, int iq ) {  //,Family family,String[][] schedule
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.iq = iq;
-        this.family = family;
-        this.schedule = schedule;
-    }
-
 
 }

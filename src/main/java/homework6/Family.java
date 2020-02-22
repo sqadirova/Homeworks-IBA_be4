@@ -11,6 +11,16 @@ public class Family {
     private Pet pet;
     private static int count = 2;
 
+    public Family() {
+    }
+
+    public Family(Human mother, Human father, Human[] children, Pet pet) {
+        this.mother = mother;
+        this.father = father;
+        this.children = children;
+        this.pet = pet;
+    }
+
     public Human getMother() {
         return mother;
     }
@@ -42,17 +52,6 @@ public class Family {
     public void setPet(Pet pet) {
         this.pet = pet;
     }
-
-    public Family() {
-    }
-
-    public Family(Human mother, Human father, Human[] children, Pet pet) {
-        this.mother = mother;
-        this.father = father;
-        this.children = children;
-        this.pet = pet;
-    }
-
 
     public Human[] addChild(Human child, Human[] children_list) {
         ArrayList<Human> temp = new ArrayList<>(Arrays.asList(children_list));

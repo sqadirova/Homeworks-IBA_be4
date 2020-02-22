@@ -13,6 +13,16 @@ public class Family {
     private Pet pet;
     private static int count = 2;
 
+    public Family() {
+    }
+
+    public Family(Human mother, Human father, Human[] children, Pet pet) {
+        this.mother = mother;
+        this.father = father;
+        this.children = children;
+        this.pet = pet;
+    }
+
     public Human getMother() {
         return mother;
     }
@@ -49,19 +59,6 @@ public class Family {
         count++;
     }
 
-    public Family() {
-
-
-    }
-
-    public Family(Human mother, Human father, Human[] children, Pet pet) {
-        this.mother = mother;
-        this.father = father;
-        this.children = children;
-        this.pet = pet;
-    }
-
-
     public Human[] addChild(Human child, Human[] children_list) {
         ArrayList<Human> temp = new ArrayList<>(Arrays.asList(children_list));
         temp.add(child);
@@ -69,12 +66,12 @@ public class Family {
         return temp.toArray(children_list);
     }
 
-    public boolean isdeleteChild(Human[] childrenList,int index) {
-            ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
-            temp.remove(index);
-            count--;
-            setChildren(temp.toArray(childrenList));
-            return true;
+    public boolean isdeleteChild(Human[] childrenList, int index) {
+        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
+        temp.remove(index);
+        count--;
+        setChildren(temp.toArray(childrenList));
+        return true;
     }
 
     public int countFamily() {
@@ -90,8 +87,5 @@ public class Family {
                 ", pet=" + "{" + pet.toString() + "}" +
                 '}';
     }
-
-
-
 
 }

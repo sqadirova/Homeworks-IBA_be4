@@ -10,6 +10,31 @@ public class Human {
     private Family family;
     private String[][] schedule;
 
+    public Human() {
+    }
+
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+
+    }
+
+    public Human(String name, String surname, int year, int iq) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+    }
+
+
+    public Human(String name, String surname, int year, Family family) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.family = family;
+    }
+
     public String getName() {
         return name;
     }
@@ -59,19 +84,18 @@ public class Human {
     }
 
 
-
     public void greetPet() {
         System.out.printf("Hello, %s\n", family.getPet().getNickname());
     }
 
     public void describePet() {
-        String pettricklevel;
+        String petTrickLevel;
 
-        if (family.getPet().getTrickLevel() > 50) pettricklevel = "very sly";
-        else pettricklevel = "almost not sly";
+        if (family.getPet().getTrickLevel() > 50) petTrickLevel = "very sly";
+        else petTrickLevel = "almost not sly";
 
         System.out.printf("I have a %s, he is %d years old," +
-                " he is %s \n", family.getPet().getSpecies(), family.getPet().getAge(), pettricklevel);
+                " he is %s \n", family.getPet().getSpecies(), family.getPet().getAge(), petTrickLevel);
     }
 
     //Human{name='Michael',
@@ -90,32 +114,5 @@ public class Human {
                 ", schedule=" + Arrays.toString(schedule) +
                 '}';
     }
-
-//    public Human() {
-//    }
-
-    public Human(String name, String surname, int year) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-
-    }
-
-    public Human(String name, String surname, int year, int iq) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.iq = iq;
-    }
-
-
-    public Human(String name, String surname, int year, Family family) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.family = family;
-    }
-
-
 
 }
