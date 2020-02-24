@@ -1,26 +1,23 @@
 package homework6;
 
 public class hw_06 {
-    public static String name(DayOfWeek day) {
-        return day.toString();
-    }
 
     public static String[][] schedule() {
         String[][] _schedule = new String[7][2];
 
-        _schedule[0][0] = name(DayOfWeek.monday);
+        _schedule[0][0] = DayOfWeek.monday.name();
         _schedule[0][1] = "do home work; do sport";
-        _schedule[1][0] = name(DayOfWeek.tuesday);
+        _schedule[1][0] = DayOfWeek.tuesday.name();
         _schedule[1][1] = "go to courses; watch a film";
-        _schedule[2][0] = name(DayOfWeek.wednesday);
+        _schedule[2][0] = DayOfWeek.wednesday.name();
         _schedule[2][1] = "do home work; do tests";
-        _schedule[3][0] = name(DayOfWeek.thursday);
+        _schedule[3][0] = DayOfWeek.thursday.name();
         _schedule[3][1] = "go to courses; do sport";
-        _schedule[4][0] = name(DayOfWeek.friday);
+        _schedule[4][0] = DayOfWeek.friday.name();
         _schedule[4][1] = "do home work; meeting with friends";
-        _schedule[5][0] = name(DayOfWeek.saturday);
+        _schedule[5][0] = DayOfWeek.saturday.name();
         _schedule[5][1] = "go to courses";
-        _schedule[6][0] = name(DayOfWeek.sunday);
+        _schedule[6][0] = DayOfWeek.sunday.name();
         _schedule[6][1] = "do home work; do sport";
 
         return _schedule;
