@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="HelloApp" />
-        <module name="Homeworks-IBA_be4" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Homeworks-IBA_be4" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
