@@ -15,7 +15,8 @@ public class FormatterApp1 {
   }
 
   private static void print(String value, Formatter0 fmt) {
-    System.out.println(fmt.formatLetter(value));
+    String formatted=fmt.formatLetter(value);
+    System.out.println(formatted);
 
   }
 }

@@ -1,5 +1,7 @@
 package warmup_tasks.lesson09.warmup.t3;
 
+import java.util.Optional;
+
 public class Formatter3 {
 
     public void print(String word) {
@@ -18,6 +20,7 @@ public class Formatter3 {
 
     public Formatter3(String value) {
         print(value);
-    }
+    }  //?
+
 
 }
