@@ -51,6 +51,7 @@ public class hw_06 {
 //        family1.setChildren(family1.addChild(child5, family1.getChildren()));
 
         //add child
+
         family1.addChild(child2, family1.getChildren());
         family1.addChild(child3, family1.getChildren());
         family1.addChild(child4, family1.getChildren());
@@ -62,7 +63,6 @@ public class hw_06 {
         //delete child obj
 //        family1.setChildren(family1.deleteChild_Obj(family1.getChildren(), child2));
 //        family1.setChildren(family1.deleteChild_Obj(family1.getChildren(), child5));
-
 
         family1.deleteChild_Index(family1.getChildren(), 2);
         family1.deleteChild_Index(family1.getChildren(), 0);
@@ -79,7 +79,7 @@ public class hw_06 {
 
         System.out.printf("After 2nd deleting child: %s\n", family1.toString());
 
-        System.out.printf("Count of family: %d\n", family1.countFamily());   //????
+        System.out.printf("Count of family: %d\n", family1.countFamily());
 
     }
 }

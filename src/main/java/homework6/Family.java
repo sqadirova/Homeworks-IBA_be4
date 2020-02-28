@@ -1,7 +1,5 @@
 package homework6;
 
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Family {
@@ -53,6 +51,7 @@ public class Family {
         this.pet = pet;
     }
 
+    //ArrayList version
 //    public boolean addChild(Human child,Human[] children_list) {   //int index
 //        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(children_list));
 //        temp.add(child);
@@ -67,7 +66,7 @@ public class Family {
 //        return true;
 //    }
 
-    public boolean addChild(Human child, Human[] originChildren) { //,int index
+    public boolean addChild(Human child, Human[] originChildren) {
         int n = originChildren.length;
         Human[] newChildren = new Human[n + 1];
         for (int i = 0; i < n; i++) {
@@ -75,10 +74,10 @@ public class Family {
         }
         newChildren[n] = child;
         setChildren(newChildren);
-        // count++;
         return true;
     }
 
+    //ArrayList version
 //    public Human[] deleteChild_Index(Human[] childrenList, int index) {
 //        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
 //        temp.remove(index);
@@ -90,7 +89,6 @@ public class Family {
         if (originChildren == null || index < 0 || index >= originChildren.length) {
             return false;
         }
-
         Human[] anotherChildren = new Human[originChildren.length - 1];
 
         for (int i = 0, j = 0; i < originChildren.length; i++) {
@@ -100,10 +98,8 @@ public class Family {
             anotherChildren[j++] = originChildren[i];
         }
         setChildren(anotherChildren);
-        //  count--;
         return true;
     }
-
 
     //    public Human[] deleteChild_Obj(Human[] childrenList, Human child) {
 //        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
@@ -113,16 +109,16 @@ public class Family {
 //    }
 
     public boolean deleteChild_Obj(Human[] originChildren, Human child) {
-        if (originChildren == null || child==null) {
+        if (originChildren == null || child == null) {
             return false;
         }
-        int n=originChildren.length;
+        int n = originChildren.length;
         Human[] anotherChildren = new Human[n - 1];
-        for (int i = 0,k=0; i < n; i++) {
-            if (!child.equals(originChildren[i])){
-            anotherChildren[k++]=originChildren[i];}
+        for (int i = 0, k = 0; i < n; i++) {
+            if (!child.equals(originChildren[i])) {
+                anotherChildren[k++] = originChildren[i];
+            }
         }
-       // anotherChildren[n-1]=child;
         setChildren(anotherChildren);
 
         return true;
@@ -141,5 +137,4 @@ public class Family {
                 ", pet=" + "{" + pet.toString() + "}" +
                 '}';
     }
-
 }

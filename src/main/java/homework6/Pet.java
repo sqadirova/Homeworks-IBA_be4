@@ -65,6 +65,14 @@ public class Pet {
         this.habits = habits;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pet)) return false;
+        Pet pet = (Pet) o;
+        return Arrays.equals(getHabits(), pet.getHabits());
+    }
+
     public void eat() {
         System.out.println("I am eating");
     }
@@ -76,7 +84,6 @@ public class Pet {
     public void foul() {
         System.out.println("I need to cover it up");
     }
-
 
     //dog{
     // nickname='Rock',
@@ -93,5 +100,4 @@ public class Pet {
                 ", habits=" + Arrays.toString(habits) +
                 '}';
     }
-
 }

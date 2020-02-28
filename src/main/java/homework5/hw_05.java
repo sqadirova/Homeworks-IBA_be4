@@ -35,6 +35,13 @@ public class hw_05 {
 
         String[] habits = {"eat", "DRINK", "sleep"};
         Pet pet1 = new Pet("cat", "mikky", 3, 70, habits);
+        Pet pet2 = new Pet("cat", "mikky", 3, 70, habits);
+
+        if (pet1.getHabits().equals(pet2.getHabits())) {
+            System.out.println("Equal");
+        } else {
+            System.out.println("Not equal");
+        }
 
         Family family1 = new Family();
         Human[] children = {child1};
@@ -43,16 +50,15 @@ public class hw_05 {
         family1.setFather(father);
         family1.setPet(pet1);
         family1.setChildren(children);
-        family1.setChildren(family1.addChild(child2, family1.getChildren()));
-        family1.setChildren(family1.addChild(child3, family1.getChildren()));
-        family1.setChildren(family1.addChild(child4, family1.getChildren()));
+        family1.addChild(child2, family1.getChildren());
+        family1.addChild(child3, family1.getChildren());
+        family1.addChild(child4, family1.getChildren());
 
         System.out.println(family1.toString());
 
-        family1.isdeleteChild(family1.getChildren(), 1);
-        family1.isdeleteChild(family1.getChildren(), 0);
+        family1.deleteChild(family1.getChildren(), 1);
+        family1.deleteChild(family1.getChildren(), 0);
 
         System.out.printf("After deleting child: %s\n", family1.toString());
-
     }
 }

@@ -10,9 +10,9 @@ public class Human {
     private String surname;
     private int year;
     private int iq;
-   private Family family;
+    private Family family;
 
-    //    public Human() {
+//    public Human() {
 //    }
 
     public Human(String name, String surname, int year) {
@@ -29,7 +29,7 @@ public class Human {
         this.family = family;
     }
 
-    public Human(String name, String surname, int year, int iq ) {  //,Family family,String[][] schedule
+    public Human(String name, String surname, int year, int iq) {  //,Family family,String[][] schedule
         this.name = name;
         this.surname = surname;
         this.year = year;
