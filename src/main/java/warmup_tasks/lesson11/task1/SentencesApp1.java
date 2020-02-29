@@ -1,4 +1,4 @@
-package warmup_tasks.lesson11;
+package warmup_tasks.lesson11.task1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
