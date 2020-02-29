@@ -13,9 +13,17 @@ public class SentencesApp1 {
     List<String> verbs = list("wrote", "chased", "slept on");
     List<String> objects = list("the book", "the ball", "the bed");
 
+    List<String> sentences = Stream.of(subjects, verbs, objects)
+            .flatMap(Collection::stream)
+            .collect(Collectors.toList());
 
-    List<String> sentences = all_possible(subjects, verbs, objects);
     System.out.println(sentences.toString());
+
+//    subjects.stream().flatMap(subj ->
+//            verbs.stream().flatMap(verb ->
+//                    objects.stream().map(obj ->
+//                            all_possible(subj, verb, obj))))
+//            .collect(Collectors.toList());
 
   }
 
@@ -25,10 +33,18 @@ public class SentencesApp1 {
   }
 
 
-  private static List<String> all_possible(List<String> subjects, List<String> verbs, List<String> objects) {
-    List<String> sentences = Stream.of(subjects, verbs, objects).
-            flatMap(Collection::stream).
-            collect(Collectors.toList());
-    return sentences;
-  }
+//  private static List<String> all_possible(List<String> subjects, List<String> verbs, List<String> objects) {
+//    StringBuilder builder = new StringBuilder();
+//    for (String s : subjects) {
+//      for (String v : verbs) {
+//        for (String o : objects) {
+//          builder.append(s + " ");
+//          builder.append(v + " ");
+//          builder.append(o + "\n");
+//        }
+//      }
+//    }
+//    return Arrays.asList(builder.toString());
+//
+//  }
 }
