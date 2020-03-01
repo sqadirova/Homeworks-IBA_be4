@@ -1,14 +1,13 @@
 package homework8;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Set;
 
 public abstract class Pet {
     private Species species;
     private String nickname;
     private int age;
     private int trickLevel;
-    private HashSet habits;
+    private Set habits;
 
     public Pet() {
     }
@@ -18,7 +17,7 @@ public abstract class Pet {
         this.nickname = nickname;
     }
 
-    public Pet(Species species, String nickname, int age, int trickLevel, HashSet habits) {
+    public Pet(Species species, String nickname, int age, int trickLevel, Set habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -59,11 +58,11 @@ public abstract class Pet {
         this.trickLevel = trickLevel;
     }
 
-    public HashSet getHabits() {
+    public Set getHabits() {
         return habits;
     }
 
-    public void setHabits(HashSet habits) {
+    public void setHabits(Set habits) {
         this.habits = habits;
     }
 

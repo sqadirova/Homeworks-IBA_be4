@@ -2,8 +2,8 @@ package homework8;
 
 public final class Man extends Human {
     @Override
-    public void greetPet() {
-        System.out.printf("Hello dear, %s\n", getFamily().getPet().getNickname());
+    public void greetPet(Pet pet) {
+        System.out.printf("Hello dear, %s\n", pet.getNickname());
     }
 
     public void repairCar(){

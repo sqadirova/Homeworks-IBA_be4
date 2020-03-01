@@ -1,6 +1,6 @@
 package homework8;
 
-import java.util.HashSet;
+import java.util.Set;
 
 public class RoboCat extends Pet {
     @Override
@@ -14,7 +14,7 @@ public class RoboCat extends Pet {
 
     }
 
-    public RoboCat(String nickname, int age, int trickLevel, HashSet habits) {
+    public RoboCat(String nickname, int age, int trickLevel, Set habits) {
         super(Species.RoboCat, nickname, age, trickLevel, habits);
     }
 

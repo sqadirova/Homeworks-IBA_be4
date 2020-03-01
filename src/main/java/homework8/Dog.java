@@ -1,6 +1,6 @@
 package homework8;
 
-import java.util.HashSet;
+import java.util.Set;
 
 public class Dog extends Pet implements IAbility {
     @Override
@@ -13,7 +13,7 @@ public class Dog extends Pet implements IAbility {
         System.out.printf("Hello, owner. I am- %s. I miss you!\n", getNickname());
     }
 
-    public Dog(String nickname, int age, int trickLevel, HashSet habits) {
+    public Dog(String nickname, int age, int trickLevel, Set habits) {
         super(Species.dog, nickname, age, trickLevel, habits);
     }
 }

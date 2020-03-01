@@ -3,6 +3,7 @@ package homework8;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Human {
     private String name;
@@ -10,7 +11,7 @@ public class Human {
     private int year;
     private int iq;
     private Family family;
-    private HashMap<String,String> schedule;
+    private Map<String, String> schedule;
 
     public Human() {
     }
@@ -22,12 +23,12 @@ public class Human {
 
     }
 
-    public Human(String name, String surname, int year, int iq,HashMap<String,String> schedule)  {
+    public Human(String name, String surname, int year, int iq) { //, Map<String, String> schedule
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-        this.schedule=schedule;
+        this.schedule = schedule;
     }
 
 
@@ -70,11 +71,11 @@ public class Human {
         this.iq = iq;
     }
 
-    public HashMap<String,String> getSchedule() {
+    public Map<String, String> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(HashMap<String,String> schedule) {
+    public void setSchedule(Map<String, String> schedule) {
         this.schedule = schedule;
     }
 
@@ -87,18 +88,18 @@ public class Human {
     }
 
 
-    public void greetPet() {
-        System.out.printf("Hello, %s\n", family.getPet().getNickname());
+    public void greetPet(Pet pet) {
+        System.out.printf("Hello, %s\n", pet.getNickname());
     }
 
-    public void describePet() {
+    public void describePet(Pet pet) {
         String petTricklevel;
 
-        if (family.getPet().getTrickLevel() > 50) petTricklevel = "very sly";
+        if (pet.getTrickLevel() > 50) petTricklevel = "very sly";
         else petTricklevel = "almost not sly";
 
         System.out.printf("I have a %s, he is %d years old," +
-                " he is %s \n", family.getPet().getSpecies(), family.getPet().getAge(), petTricklevel);
+                " he is %s \n", pet.getSpecies(), pet.getAge(), petTricklevel);
     }
 
     //Human{name='Michael',

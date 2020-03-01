@@ -1,21 +1,23 @@
 package homework8;
 
 
+import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class Family {
     private Human mother;
     private Human father;
-    private ArrayList<Human> children;
-    private Pet pet;
-    private static int count = 2;
+    private List<Human> children;
+    private Set<Pet> pet;
+    private static int count = 0;
 
     public Family() {
     }
 
-    public Family(Human mother, Human father, ArrayList<Human> children, Pet pet) {
+    public Family(Human mother, Human father, List<Human> children, Set<Pet> pet) {
         this.mother = mother;
         this.father = father;
         this.children = children;
@@ -38,48 +40,50 @@ public class Family {
         this.father = father;
     }
 
-    public ArrayList<Human> getChildren() {
+    public List<Human> getChildren() {
         return children;
     }
 
-    public void setChildren(ArrayList<Human> children) {
+    public void setChildren(List<Human> children) {
         this.children = children;
     }
 
-    public Pet getPet() {
+    public Set<Pet> getPet() {
         return pet;
     }
 
-    public void setPet(Pet pet) {
+    public void setPet(Set<Pet> pet) {
         this.pet = pet;
     }
 
 
-    public boolean addChild(Human child, ArrayList<Human> children_list) {
-        ArrayList<Human> temp = new ArrayList<>(children_list);
+    public boolean addChild(Human child) { //, List<Human> children_list
+        ArrayList<Human> temp = new ArrayList<>(getChildren());
         temp.add(child);
         count++;
         setChildren(temp);
         return true;
     }
 
-    public Human[] deleteChild_Index(Human[] childrenList, int index) {
-        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
+    public boolean deleteChild_Index(int index) {  //List<Human> childrenList,
+        List<Human> temp = new ArrayList<>(getChildren());
         temp.remove(index);
         count--;
-        return temp.toArray(childrenList);
+        setChildren(temp);
+        return true;
     }
 
 
-    public Human[] deleteChild_Obj(Human[] childrenList, Human child) {
-        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(childrenList));
+    public boolean deleteChild_Obj(Human child) {  //List<Human> childrenList,
+        List<Human> temp = new ArrayList<>(getChildren());
         temp.remove(child);
         count--;
-        return temp.toArray(childrenList);
+        setChildren(temp);
+        return true;
     }
 
     public int countFamily() {
-        return count;
+        return getChildren().size() + 2;
     }
 
     @Override
@@ -91,5 +95,4 @@ public class Family {
                 ", pet=" + "{" + pet.toString() + "}" +
                 '}';
     }
-
 }

@@ -1,6 +1,6 @@
 package homework8;
 
-import java.util.HashSet;
+import java.util.Set;
 
 public class Fish extends Pet {
     @Override
@@ -8,7 +8,7 @@ public class Fish extends Pet {
         System.out.printf("Hello, owner. I am- %s. I miss you!\n", getNickname());
     }
 
-    public Fish(String nickname, int age, int trickLevel, HashSet habits) {
+    public Fish(String nickname, int age, int trickLevel, Set habits) {
         super(Species.fish, nickname, age, trickLevel, habits);
     }
 }

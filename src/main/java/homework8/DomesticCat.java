@@ -1,6 +1,6 @@
 package homework8;
 
-import java.util.HashSet;
+import java.util.Set;
 
 public class DomesticCat extends Pet implements IAbility {
 
@@ -14,7 +14,7 @@ public class DomesticCat extends Pet implements IAbility {
         System.out.printf("Hello, owner. I am- %s. I miss you!\n", getNickname());
     }
 
-    public DomesticCat(String nickname, int age, int trickLevel, HashSet habits) {
+    public DomesticCat(String nickname, int age, int trickLevel, Set habits) {
         super(Species.domesticCat,nickname, age, trickLevel, habits);
 
     }
