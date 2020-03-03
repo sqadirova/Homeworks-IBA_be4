@@ -1,4 +1,4 @@
-package warmup_tasks.AtHome.Tasks_IntStreams;
+package warmup_tasks.AtHome.Tasks_Streams;
 
 import java.util.List;
 import java.util.function.IntPredicate;
