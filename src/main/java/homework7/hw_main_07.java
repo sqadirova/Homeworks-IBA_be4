@@ -37,13 +37,6 @@ public class hw_main_07 {
         Human father = new Human("Seyran", "Qadirov", 1963, 80);
 
         String[] habits = {"eat", "DRINK", "sleep"};
-        Pet pet1 = new Pet(Species.UNKNOWN, "mikky", 3, 70, habits) {
-            @Override
-            public void respond() {
-
-            }
-        };
-        System.out.println(pet1.toString());
 
         DomesticCat dom_cat=new DomesticCat("kitty",1,70,habits);
         System.out.println(dom_cat);

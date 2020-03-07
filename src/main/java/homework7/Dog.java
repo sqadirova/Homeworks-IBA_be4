@@ -12,6 +12,6 @@ public class Dog extends Pet implements IAbility {
     }
 
     public Dog(String nickname, int age, int trickLevel, String[] habits) {
-        super(Species.dog, nickname, age, trickLevel, habits);
+        super(nickname, age, trickLevel, habits);
     }
 }
