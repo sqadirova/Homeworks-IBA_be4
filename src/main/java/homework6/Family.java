@@ -7,7 +7,8 @@ public class Family {
     private Human father;
     private Human[] children;
     private Pet pet;
-    private static int count = 0;
+    private static int childrenCount = 0;
+
 
     public Family() {
     }
@@ -51,6 +52,10 @@ public class Family {
         this.pet = pet;
     }
 
+    public int getchildrenCount() {
+        return childrenCount;
+    }
+
     //ArrayList version
 //    public boolean addChild(Human child,Human[] children_list) {   //int index
 //        ArrayList<Human> temp = new ArrayList<>(Arrays.asList(children_list));
@@ -68,6 +73,7 @@ public class Family {
 
     public boolean addChild(Human child, Human[] originChildren) {
         int n = originChildren.length;
+        childrenCount++;
         Human[] newChildren = new Human[n + 1];
         for (int i = 0; i < n; i++) {
             newChildren[i] = originChildren[i];
@@ -97,6 +103,7 @@ public class Family {
             }
             anotherChildren[j++] = originChildren[i];
         }
+        childrenCount--;
         setChildren(anotherChildren);
         return true;
     }
@@ -119,13 +126,14 @@ public class Family {
                 anotherChildren[k++] = originChildren[i];
             }
         }
+        childrenCount--;
         setChildren(anotherChildren);
 
         return true;
     }
 
     public int countFamily() {
-        return getChildren().length + 2;
+        return childrenCount+ 2;
     }
 
     @Override

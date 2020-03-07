@@ -1,4 +1,4 @@
-package warmup_tasks.lesson12;
+package warmup_tasks.lesson12.task1;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -19,9 +19,6 @@ public class FileReading {
             String[] str = line.trim().split(":");
             System.out.println(str[0]);
             String[] str2 = str[1].trim().split(",");
-
-
-
         }
 
 

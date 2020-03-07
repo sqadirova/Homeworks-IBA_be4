@@ -1,10 +1,24 @@
 package homework6;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class FamilyTest {
+//    private Family family;
+//
+//    @BeforeEach
+//    public void init(){
+//        this.family=new Family();
+////        Human[] children=new Human[10];
+//        Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
+//        Human[] children = {child1};
+//        family.setMother(new Human("Sevda", "Qadirova", 1967, 80));
+//        family.setFather(new Human("Seyran", "Qadirov", 1963, 80));
+//        family.setPet(new Pet(Species.cat, "mikky", 3, 70, new String[]{"eat", "DRINK", "sleep"}));
+//        family.setChildren(children);
+//    }
 
     @Test
     void addChild1() {
