@@ -7,6 +7,11 @@ public class Brackets {
     int count=0;
 
     for (int i = 0; i < origin.length(); i++) {
+      //version 1
+//      count+=origin.charAt(i)=='('?1:-1;
+//      max=Math.max(max,count);
+
+      //version2
       if (origin.charAt(i)=='('){
         count++;
         max=Math.max(max,count);
