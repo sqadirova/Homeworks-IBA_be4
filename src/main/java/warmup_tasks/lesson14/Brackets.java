@@ -9,15 +9,25 @@ public class Brackets {
     for (int i = 0; i < origin.length(); i++) {
       if (origin.charAt(i)=='('){
         count++;
-        if (count>max){
-          max=count;
-        }
+        max=Math.max(max,count);
+        //1
+//        if (count>max){
+//          max=count;
+//        }
+        //2
+       // int MAX=count>max?max=count:count;
+
+
       }else if (origin.charAt(i)==')'){
-        if (count>0) count--;
-        else return -1;
+        count--;
+        //1
+//        if (count>0) count--;
+//        else return -1;
+        //2
+       // int result1 = count > 0 ? count-- : -1;
       }
     }
     return max;
-  }
 
+  }
 }
