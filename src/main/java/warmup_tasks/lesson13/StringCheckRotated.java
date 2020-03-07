@@ -7,7 +7,6 @@ public class StringCheckRotated {
   public boolean check(String origin, String rotated){
     return (origin.length()==rotated.length())
             && ((origin+origin).contains(rotated));
-
   }
 
 }
