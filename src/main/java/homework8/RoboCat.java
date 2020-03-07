@@ -15,7 +15,7 @@ public class RoboCat extends Pet {
     }
 
     public RoboCat(String nickname, int age, int trickLevel, Set habits) {
-        super(Species.RoboCat, nickname, age, trickLevel, habits);
+        super(nickname, age, trickLevel, habits);
     }
 
 }

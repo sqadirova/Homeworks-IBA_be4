@@ -37,19 +37,8 @@ public class hw_main_08 {
         habits.add("sleep");
 
 
-        Pet pet1 = new Pet(Species.UNKNOWN, "mikky", 3, 70, habits) {
-            @Override
-            public void respond() {
-
-            }
-        };
-
-        Pet pet2 = new Pet(Species.dog, "Rock", 2, 84, habits) {
-            @Override
-            public void respond() {
-
-            }
-        };
+        Pet pet1 = new Dog("Rock", 2, 84, habits);
+        Pet pet2 = new Fish("Nemo", 1, 15, habits);
         System.out.println(pet1.toString());
         System.out.println(pet2.toString());
 

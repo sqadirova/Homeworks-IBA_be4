@@ -2,17 +2,14 @@ package homework8;
 
 
 import java.sql.Struct;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Family {
     private Human mother;
     private Human father;
     private List<Human> children;
     private Set<Pet> pet;
-    private static int count = 0;
+    private static int countOfChildren = 0;
 
     public Family() {
     }
@@ -56,11 +53,22 @@ public class Family {
         this.pet = pet;
     }
 
+    public int getCountOfChildren() {
+        return countOfChildren;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Family)) return false;
+        Family family = (Family) o;
+        return Objects.equals(getPet(), family.getPet());
+    }
 
     public boolean addChild(Human child) { //, List<Human> children_list
         ArrayList<Human> temp = new ArrayList<>(getChildren());
         temp.add(child);
-        count++;
+        countOfChildren++;
         setChildren(temp);
         return true;
     }
@@ -68,7 +76,7 @@ public class Family {
     public boolean deleteChild_Index(int index) {  //List<Human> childrenList,
         List<Human> temp = new ArrayList<>(getChildren());
         temp.remove(index);
-        count--;
+        countOfChildren--;
         setChildren(temp);
         return true;
     }
@@ -77,13 +85,13 @@ public class Family {
     public boolean deleteChild_Obj(Human child) {  //List<Human> childrenList,
         List<Human> temp = new ArrayList<>(getChildren());
         temp.remove(child);
-        count--;
+        countOfChildren--;
         setChildren(temp);
         return true;
     }
 
     public int countFamily() {
-        return getChildren().size() + 2;
+        return countOfChildren + 2;
     }
 
     @Override

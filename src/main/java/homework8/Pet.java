@@ -12,13 +12,11 @@ public abstract class Pet {
     public Pet() {
     }
 
-    public Pet(Species species, String nickname) {
-        this.species = species;
+    public Pet(String nickname) {
         this.nickname = nickname;
     }
 
-    public Pet(Species species, String nickname, int age, int trickLevel, Set habits) {
-        this.species = species;
+    public Pet(String nickname, int age, int trickLevel, Set habits) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;

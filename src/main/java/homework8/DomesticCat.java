@@ -15,7 +15,7 @@ public class DomesticCat extends Pet implements IAbility {
     }
 
     public DomesticCat(String nickname, int age, int trickLevel, Set habits) {
-        super(Species.domesticCat,nickname, age, trickLevel, habits);
+        super(nickname, age, trickLevel, habits);
 
     }
 

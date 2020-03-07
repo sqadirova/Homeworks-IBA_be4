@@ -1,127 +1,54 @@
 package homework8;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FamilyTest {
+    private Family family;
 
-    @Test
-    void addChild1() {
-        Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
-        Family family1 = new Family();
-        List<Human> children = new ArrayList<>();
-        family1.setChildren(children);
-        boolean expected = true;
-        boolean actual = family1.addChild(child1);
-        assertEquals(expected, actual);
+    @BeforeEach
+    public void init() {
+        this.family = new Family();
+        Map<String, String> schedule = new HashMap<String, String>() {{
+            put(DayOfWeek.monday.name(), "go to sport");
+        }};
+        Human mother = new Woman("Sevda", "Qadirova", 1967);
+        Human father = new Man("Seyran", "Qadirov", 1963);
+        Pet dog = new Dog("Rock", 2, 70, new HashSet<>(Arrays.asList("eat", "sleep")));
+        Pet fish = new Fish("Nemo", 1, 20, new HashSet<>(Arrays.asList("eat", "sleep")));
+        family = new Family(mother, father, new ArrayList<>(), new HashSet<>(Arrays.asList(dog, fish)));
     }
 
     @Test
-    void addChild2() {
-        Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
-        Human child2 = new Human("Leyla", "Qadirova", 1993, 80);
-        Human child3 = new Human("Ali", "Qadirov", 2001, 80);
-        Family family1 = new Family();
-        List<Human> children = new ArrayList<>();
-        family1.setChildren(children);
-        family1.addChild(child1);
-        family1.addChild(child2);
-        family1.addChild(child3);
-        int expected = 3;
-        int actual = family1.getChildren().size();
-        assertEquals(expected, actual);
+    void deleteChild_Obj_() {
+       Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
+       family.addChild(child1);
+       assertTrue(family.deleteChild_Obj(child1));
     }
 
     @Test
-    void deleteChild_Index1() {
+    void deleteChild_Index() {
         Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
-        Human child2 = new Human("Leyla", "Qadirova", 1993, 80);
-        Human child3 = new Human("Ali", "Qadirov", 2001, 80);
-        Family family1 = new Family();
-        List<Human> children = new ArrayList<>();
-        family1.setChildren(children);
-        family1.addChild(child1);
-        family1.addChild(child2);
-        family1.addChild(child3);
-        family1.deleteChild_Index(1);
-        int expected = 2;
-        int actual = family1.getChildren().size();
-        assertEquals(expected, actual);
+        family.addChild(child1);
+        assertTrue(family.deleteChild_Index(0));
     }
 
     @Test
-    void deleteChild_Index2() {
+    void addChild() {
         Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
-        Human child2 = new Human("Leyla", "Qadirova", 1993, 80);
-        Human child3 = new Human("Ali", "Qadirov", 2001, 80);
-        Family family1 = new Family();
-        List<Human> children = new ArrayList<>();
-        family1.setChildren(children);
-        family1.addChild(child1);
-        family1.addChild(child2);
-        family1.addChild(child3);
-        boolean expected = true;
-        boolean actual = family1.deleteChild_Index(1);
-        assertEquals(expected, actual);
+        assertTrue(family.addChild(child1));
     }
 
     @Test
-    void deleteChild_Obj1() {
+    void addChild_TestCount() {
         Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
-        Human child2 = new Human("Leyla", "Qadirova", 1993, 80);
-        Human child3 = new Human("Ali", "Qadirov", 2001, 80);
-        Family family1 = new Family();
-        List<Human> children = new ArrayList<>();
-        family1.setChildren(children);
-        family1.addChild(child1);
-        family1.addChild(child2);
-        family1.addChild(child3);
-        boolean expected = true;
-        boolean actual = family1.deleteChild_Obj(child2);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void deleteChild_Obj2() {
-        Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
-        Human child2 = new Human("Leyla", "Qadirova", 1993, 80);
-        Human child3 = new Human("Ali", "Qadirov", 2001, 80);
-        Family family1 = new Family();
-        List<Human> children = new ArrayList<>();
-        family1.setChildren(children);
-        family1.addChild(child1);
-        family1.addChild(child2);
-        family1.addChild(child3);
-        family1.deleteChild_Obj(child2);
-        int expected = 2;
-        int actual = family1.getChildren().size();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void countFamily() {
-        Human child1 = new Human("Sidiqa", "Qadirova", 1997, 80);
-        Human child2 = new Human("Leyla", "Qadirova", 1993, 80);
-        Human child3 = new Human("Ali", "Qadirov", 2001, 80);
-        Human mother = new Human("Sevda", "Qadirova", 1967, 80);
-        Human father = new Human("Seyran", "Qadirov", 1963, 80);
-        Family family1 = new Family();
-        List<Human> children = new ArrayList<>();
-        family1.setChildren(children);
-        family1.setMother(mother);
-        family1.setFather(father);
-        family1.addChild(child1);
-        family1.addChild(child2);
-        family1.addChild(child3);
-        int expected = 5;
-        int actual = family1.countFamily();
-        assertEquals(expected, actual);
+        family.addChild(child1);
+        assertEquals(2,family.getCountOfChildren());
     }
 
 }

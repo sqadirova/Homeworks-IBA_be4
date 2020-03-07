@@ -9,6 +9,6 @@ public class Fish extends Pet {
     }
 
     public Fish(String nickname, int age, int trickLevel, Set habits) {
-        super(Species.fish, nickname, age, trickLevel, habits);
+        super(nickname, age, trickLevel, habits);
     }
 }

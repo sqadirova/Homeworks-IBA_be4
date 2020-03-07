@@ -3,6 +3,7 @@ package homework8;
 import java.util.Set;
 
 public class Dog extends Pet implements IAbility {
+
     @Override
     public void foul() {
         System.out.println("Ups, I need to cover it up");
@@ -14,6 +15,6 @@ public class Dog extends Pet implements IAbility {
     }
 
     public Dog(String nickname, int age, int trickLevel, Set habits) {
-        super(Species.dog, nickname, age, trickLevel, habits);
+        super(nickname, age, trickLevel, habits);
     }
 }
