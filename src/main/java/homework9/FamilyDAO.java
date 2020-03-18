@@ -9,7 +9,7 @@ public class FamilyDAO {
         return null;
     }
 
-    public Family getFamilyByIndex(int index){
-
-    }
+//    public Family getFamilyByIndex(int index){
+//
+//    }
 }
