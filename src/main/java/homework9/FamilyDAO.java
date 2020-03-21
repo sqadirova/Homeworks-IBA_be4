@@ -1,15 +1,18 @@
 package homework9;
 
-import homework7.Family;
-
 import java.util.List;
+import java.util.Optional;
 
-public class FamilyDAO {
-    public List<Family> getAllFamilies(){
-        return null;
-    }
+public interface FamilyDAO {
+    List<Family> getAllFamilies();
 
-//    public Family getFamilyByIndex(int index){
-//
-//    }
+    Optional<Family> getFamilyByIndex(int index);  //return Family
+
+    boolean deleteFamily(int index);
+
+    boolean deleteFamily(Family family);
+
+    void saveFamily(Family family);
+
+
 }
