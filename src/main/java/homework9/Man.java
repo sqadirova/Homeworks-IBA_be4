@@ -6,6 +6,10 @@ public final class Man extends Human {
         super(name, surname, year);
     }
 
+    public Man(String name, String surname, int year, int iq) {
+        super(name, surname, year, iq);
+    }
+
     @Override
     public void greetPet(Pet pet) {
         System.out.printf("Hello dear, %s\n", pet.getNickname());

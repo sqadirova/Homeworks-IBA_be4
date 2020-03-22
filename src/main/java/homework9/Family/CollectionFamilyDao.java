@@ -1,9 +1,8 @@
-package homework9;
+package homework9.Family;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class CollectionFamilyDao implements FamilyDAO {
    private List<Family> database=new ArrayList<>();
@@ -35,6 +34,32 @@ public class CollectionFamilyDao implements FamilyDAO {
 
     @Override
     public void saveFamily(Family family) {
-        database.add(family);
+        if(database.contains(family)){
+            database.set(database.indexOf(family),family);
+        }
+        else{
+            database.add(family);
+        }
     }
+
+
+//    public Human bornChild(Family family,String male, String female) {
+//        Human h;
+//        database.stream().map(x->x.bornChild(male,female)).
+//        int iq=(family.getFather().getIq()+family.getMother().getIq())/2;
+//        int random= (int) (Math.random()*2);
+//        if(random==0){
+//            h=new Woman(female,family.getFather().getSurname(),2020,iq);
+//        }
+//        else{
+//            h=new Man(male,family.getFather().getSurname(),2020,iq);
+//        }
+//        family.addChild(h);
+//        database.add(family);
+//        return h;
+//    }
+
+
+
+
 }

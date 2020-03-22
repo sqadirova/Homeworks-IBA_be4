@@ -1,4 +1,9 @@
-package homework9;
+package homework9.Family;
+
+import homework9.Human;
+import homework9.Man;
+import homework9.Pet;
+import homework9.Woman;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +15,13 @@ public class Family {
     private Human mother;
     private Human father;
     private List<Human> children;
-    private Set<Pet> pet;
+    private List<Pet> pet;
     private static int countOfChildren = 0;
 
     public Family() {
     }
 
-    public Family(Human mother, Human father, List<Human> children, Set<Pet> pet) {
+    public Family(Human mother, Human father, List<Human> children, List<Pet> pet) {
         this.mother = mother;
         this.father = father;
         this.children = children;
@@ -56,11 +61,11 @@ public class Family {
         this.children = children;
     }
 
-    public Set<Pet> getPet() {
+    public List<Pet> getPet() {
         return pet;
     }
 
-    public void setPet(Set<Pet> pet) {
+    public void setPet(List<Pet> pet) {
         this.pet = pet;
     }
 
@@ -99,6 +104,24 @@ public class Family {
         countOfChildren--;
         setChildren(temp);
         return true;
+    }
+
+    public Human bornChild(String male,String female){
+        Human h;
+        int iq=(getFather().getIq()+getMother().getIq())/2;
+        int random= (int) (Math.random()*2);
+        if(random==0){
+            h=new Woman(female,getFather().getSurname(),2020,iq);
+        }
+        else{
+            h=new Man(male,getFather().getSurname(),2020,iq);
+        }
+        this.addChild(h);
+        return h;
+    }
+
+    public void addPet(Pet pet){
+        this.pet.add(pet);
     }
 
     public int countFamily() {
