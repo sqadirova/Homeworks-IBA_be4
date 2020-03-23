@@ -10,7 +10,13 @@ public class RecursionOfFibonacci {
     }
 
     public static void main(String[] args) {
-        System.out.println(fibo(8));
+
+        System.out.printf("Fibo number in 8th: %d\n",fibo(8));
+
+        System.out.println("fibo sequence:");
+        for (int i= 1; i <= 8; i++) {
+            System.out.print(fibo(i)+"\t");
+        }
 
     }
 }
