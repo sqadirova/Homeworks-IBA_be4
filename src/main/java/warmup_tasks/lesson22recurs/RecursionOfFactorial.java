@@ -1,6 +1,6 @@
 package warmup_tasks.lesson22recurs;
 
-public class factorial {
+public class RecursionOfFactorial {
     static int factorial(int n) {
         if (n >=1) {
             return n * factorial(n - 1);
