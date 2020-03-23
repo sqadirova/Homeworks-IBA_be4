@@ -1,6 +1,7 @@
-package homework9;
+package homework9.Human;
 
 import homework9.Family.Family;
+import homework9.Pet.Pet;
 
 import java.util.Map;
 

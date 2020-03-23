@@ -1,4 +1,4 @@
-package homework9;
+package homework9.Pet;
 
 import java.util.Set;
 
@@ -80,7 +80,7 @@ public abstract class Pet {
 
     @Override
     public String toString() {
-        return species + "{" +
+        return getClass().getSimpleName() + "{" +
                 " nickname='" + nickname + "'" +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +

@@ -1,4 +1,6 @@
-package homework9;
+package homework9.Human;
+
+import homework9.Pet.Pet;
 
 public final class Man extends Human {
 

@@ -6,7 +6,7 @@ import java.util.Optional;
 public interface FamilyDAO {
     List<Family> getAllFamilies();
 
-    Optional<Family> getFamilyByIndex(int index);  //return Family
+    Family getFamilyByIndex(int index);
 
     boolean deleteFamily(int index);
 
@@ -14,6 +14,7 @@ public interface FamilyDAO {
 
     void saveFamily(Family family);
 
+    void addFamily(Family family);
 
 
 }

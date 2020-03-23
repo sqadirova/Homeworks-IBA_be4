@@ -1,4 +1,4 @@
-package homework9;
+package homework9.Pet;
 
 
 import java.util.Set;
@@ -18,4 +18,6 @@ public class Dog extends Pet implements IAbility {
     public Dog(String nickname, int age, int trickLevel, Set habits) {
         super(nickname, age, trickLevel, habits);
     }
+
+
 }

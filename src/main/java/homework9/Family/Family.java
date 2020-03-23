@@ -1,25 +1,24 @@
 package homework9.Family;
 
-import homework9.Human;
-import homework9.Man;
-import homework9.Pet;
-import homework9.Woman;
+import homework9.Human.Human;
+import homework9.Human.Man;
+import homework9.Pet.Pet;
+import homework9.Human.Woman;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Family {
-    private int familyId;
     private Human mother;
     private Human father;
-    private List<Human> children;
-    private List<Pet> pet;
+    private List<Human> children = new ArrayList<>();
+    private List<Pet> pet = new ArrayList<>();
+
     private static int countOfChildren = 0;
 
-    public Family() {
-    }
+//    public Family() {
+//    }
 
     public Family(Human mother, Human father, List<Human> children, List<Pet> pet) {
         this.mother = mother;
@@ -29,12 +28,10 @@ public class Family {
     }
 
     public Family(Human mother, Human father) {
-        this.mother = mother;
-        this.father = father;
-    }
-
-    public int getFamilyId() {
-        return familyId;
+        setMother(mother);
+        setFather(father);
+        mother.setFamily(this);
+        father.setFamily(this);
     }
 
     public Human getMother() {
@@ -54,11 +51,18 @@ public class Family {
     }
 
     public List<Human> getChildren() {
-        return children;
+        List<Human> listChildren = new ArrayList<>();
+        for (Human human : this.children) {
+            listChildren.add(human);
+        }
+        return listChildren;
     }
 
     public void setChildren(List<Human> children) {
-        this.children = children;
+        this.children = new ArrayList<Human>();
+        for (Human human : children) {
+            this.children.add(human);
+        }
     }
 
     public List<Pet> getPet() {
@@ -66,7 +70,7 @@ public class Family {
     }
 
     public void setPet(List<Pet> pet) {
-        this.pet = pet;
+        this.pet = new ArrayList<>(pet);
     }
 
     public int getCountOfChildren() {
@@ -81,47 +85,45 @@ public class Family {
         return Objects.equals(getPet(), family.getPet());
     }
 
-    public boolean addChild(Human child) { //, List<Human> children_list
-        ArrayList<Human> temp = new ArrayList<>(getChildren());
-        temp.add(child);
+    public boolean addChild(Human child) {
+        children.add(child);
+        child.setFamily(this);
         countOfChildren++;
-        setChildren(temp);
         return true;
     }
 
-    public boolean deleteChild_Index(int index) {  //List<Human> childrenList,
-        List<Human> temp = new ArrayList<>(getChildren());
-        temp.remove(index);
-        countOfChildren--;
-        setChildren(temp);
-        return true;
+    public boolean deleteChild_Index(int index) {
+        if (children.get(index) != null) {
+            children.remove(index);
+            countOfChildren--;
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
-    public boolean deleteChild_Obj(Human child) {  //List<Human> childrenList,
-        List<Human> temp = new ArrayList<>(getChildren());
-        temp.remove(child);
-        countOfChildren--;
-        setChildren(temp);
-        return true;
+    public boolean deleteChild_Obj(Human child) {
+        if (children.contains(child)) {
+            children.remove(child);
+            countOfChildren--;
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public Human bornChild(String male,String female){
+    public Human bornChild(String male, String female) {
         Human h;
-        int iq=(getFather().getIq()+getMother().getIq())/2;
-        int random= (int) (Math.random()*2);
-        if(random==0){
-            h=new Woman(female,getFather().getSurname(),2020,iq);
+        int iq = (getFather().getIq() + getMother().getIq()) / 2;
+        int random = (int) (Math.random() * 2);
+        if (random == 0) {
+            h = new Woman(female, getFather().getSurname(), 2020, iq);
+        } else {
+            h = new Man(male, getFather().getSurname(), 2020, iq);
         }
-        else{
-            h=new Man(male,getFather().getSurname(),2020,iq);
-        }
-        this.addChild(h);
+        children.add(h);
         return h;
-    }
-
-    public void addPet(Pet pet){
-        this.pet.add(pet);
     }
 
     public int countFamily() {
