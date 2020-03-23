@@ -1,5 +1,6 @@
 package warmup_tasks.lesson22recurs;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class TheSum {
@@ -17,7 +18,7 @@ public class TheSum {
     int[] d = new Random().ints(1, 10)
             .limit(10).toArray();
     int sum = sum(d, d.length - 1);
-
+    System.out.println(Arrays.toString(d));
     System.out.println(sum);
   }
 }
