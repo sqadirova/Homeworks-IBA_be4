@@ -123,6 +123,7 @@ public class Family {
             h = new Man(male, getFather().getSurname(), 2020, iq);
         }
         children.add(h);
+        countOfChildren++;
         return h;
     }
 

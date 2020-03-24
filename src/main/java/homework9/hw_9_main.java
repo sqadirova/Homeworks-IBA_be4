@@ -77,7 +77,7 @@ public class hw_9_main {
         System.out.println(familyController.getPets(1));
 
         familyController.deleteFamilyByIndex(2);
-        System.out.println("Families after deleting family with index 0:");
+        System.out.printf("Families after deleting family with index 0 and count of families: %d\n",familyController.countOfFamilies());
         familyController.displayAllFamilies();
 
         System.out.println("----------------------------------------------------------------");
@@ -86,7 +86,6 @@ public class hw_9_main {
         familyController.getFamiliesLessThan(5).forEach(System.out::println);
 
         System.out.println(familyController.countFamiliesWithMemberNumber(5));
-
 
     }
 

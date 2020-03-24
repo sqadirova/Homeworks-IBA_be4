@@ -57,7 +57,10 @@ public class FamilyService {
 
     public void deleteAllChildrenOlderThen(int year) {
         dao.getAllFamilies().stream().forEach(family -> {
-            List<Human> newChildrenList = family.getChildren().stream()
+            List<Human> newChildrenList = new ArrayList<>();
+            newChildrenList.addAll(family.getChildren());
+
+            newChildrenList.stream()
                     .filter(child -> !(child.getYear() > year))
                     .collect(Collectors.toList());
             family.setChildren(newChildrenList);
