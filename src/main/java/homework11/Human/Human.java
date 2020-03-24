@@ -22,10 +22,11 @@ public class Human {
     public Human() {
     }
 
-    public Human(String name, String surname, String birthdate) throws ParseException {
+    public Human(String name, String surname, String birthdate) throws ParseException {  //, Map<String, String> schedule
         this.name = name;
         this.surname = surname;
         this.birthdate = DataConverter.stringToMillis(birthdate);
+//        this.schedule = schedule;
 
     }
 

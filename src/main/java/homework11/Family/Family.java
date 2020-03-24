@@ -16,6 +16,7 @@ public class Family {
     private List<Human> children = new ArrayList<>();
     private List<Pet> pet = new ArrayList<>();
 
+
     private static int countOfChildren = 0;
 
 //    public Family() {
