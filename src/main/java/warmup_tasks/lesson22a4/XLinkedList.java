@@ -21,15 +21,23 @@ public class XLinkedList {
 
   // it modifies the structure and returns new head
   void prepend(int element) {
-//    throw new IllegalArgumentException("prepend:hasn't implemented yet");
-    Node newNode=new Node(element);
-    head=newNode;
+    Node node=new Node(element);
+    node.next=head;
+    head=node;
+
   }
 
   void append(int element) {
-//    throw new IllegalArgumentException("append:hasn't implemented yet");
-    Node obj=new Node(element);
-    obj.next=null;
+    Node node=new Node(element);
+    if(head==null){
+      head=node;
+    }else{
+      Node curr=head;
+      while(curr.next!=null){
+        curr=curr.next;
+      }
+      curr.next=node;
+    }
   }
 
   int size() {
