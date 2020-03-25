@@ -1,4 +1,4 @@
-package warmup_tasks.lesson22a4.warmup;
+package warmup_tasks.lesson22LinkedList.warmup;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
