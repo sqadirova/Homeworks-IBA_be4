@@ -1,10 +1,10 @@
-package homework12.console;
+package homework13.console;
 
-import homework12.entity.human.Human;
-import homework12.entity.human.Man;
-import homework12.entity.human.Woman;
-import homework12.io.ConsoleMethods;
-import homework12.io.ImplConsoleMethods;
+import homework13.entity.human.Human;
+import homework13.entity.human.Man;
+import homework13.entity.human.Woman;
+import homework13.io.ConsoleMethods;
+import homework13.io.ImplConsoleMethods;
 
 import java.util.Scanner;
 
