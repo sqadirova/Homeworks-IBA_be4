@@ -89,12 +89,13 @@ public class FamilyService {
     }
 
     public void addPet(int indexOfFamily, Pet pet) {
-        try {
-            getFamilyById(indexOfFamily).getPet().add(pet);
-            dao.saveFamily(getFamilyById(indexOfFamily));
-        } catch (PetOverFlowException ex) {
-            throw new PetOverFlowException("Pets count for one family is over f!");
-        }
+        List<Pet> petList = getFamilyById(indexOfFamily).getPet();
+        petList.add(pet);
+        getFamilyById(indexOfFamily).setPet(petList);
+        dao.saveFamily(getFamilyById(indexOfFamily));
     }
+
+
+
 
 }
