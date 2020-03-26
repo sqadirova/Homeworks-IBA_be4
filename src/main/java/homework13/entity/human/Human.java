@@ -4,13 +4,14 @@ import homework13.converter.DataConverter;
 import homework13.entity.family.Family;
 import homework13.entity.pet.Pet;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Map;
 
-public class Human {
+public class Human implements Serializable {
     private String name;
     private String surname;
     private long birthdate;

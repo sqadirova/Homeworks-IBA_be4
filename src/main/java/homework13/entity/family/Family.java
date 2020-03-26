@@ -5,11 +5,12 @@ import homework13.entity.human.Man;
 import homework13.entity.human.Woman;
 import homework13.entity.pet.Pet;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Family {
+public class Family implements Serializable {
     private Human mother;
     private Human father;
     private List<Human> children = new ArrayList<>();
