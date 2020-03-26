@@ -1,10 +1,10 @@
 package homework9.service;
 
 import homework9.dao.CollectionFamilyDao;
-import homework9.entity.Family;
+import homework9.entity.family.Family;
 import homework9.dao.FamilyDAO;
-import homework9.entity.Human;
-import homework9.entity.Pet;
+import homework9.entity.human.Human;
+import homework9.entity.pet.Pet;
 
 import java.util.ArrayList;
 import java.util.List;

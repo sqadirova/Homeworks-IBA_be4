@@ -1,8 +1,8 @@
 package homework12.console;
 
-import homework12.entity.Human;
-import homework12.human.Man;
-import homework12.human.Woman;
+import homework12.entity.human.Human;
+import homework12.entity.human.Man;
+import homework12.entity.human.Woman;
 import homework12.io.ConsoleMethods;
 import homework12.io.ImplConsoleMethods;
 

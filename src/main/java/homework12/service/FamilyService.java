@@ -1,10 +1,10 @@
 package homework12.service;
 
 import homework12.dao.CollectionFamilyDao;
-import homework12.entity.Family;
+import homework12.entity.family.Family;
 import homework12.dao.FamilyDAO;
-import homework12.entity.Human;
-import homework12.entity.Pet;
+import homework12.entity.human.Human;
+import homework12.entity.pet.Pet;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

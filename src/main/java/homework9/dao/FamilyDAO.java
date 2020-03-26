@@ -1,6 +1,6 @@
 package homework9.dao;
 
-import homework9.entity.Family;
+import homework9.entity.family.Family;
 
 import java.util.List;
 

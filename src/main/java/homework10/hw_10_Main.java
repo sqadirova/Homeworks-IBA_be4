@@ -1,7 +1,7 @@
 package homework10;
 
-import homework10.entity.Human;
-import homework10.human.Man;
+import homework10.entity.human.Human;
+import homework10.entity.human.Man;
 
 import java.text.ParseException;
 

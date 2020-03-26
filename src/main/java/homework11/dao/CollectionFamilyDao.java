@@ -1,6 +1,6 @@
 package homework11.dao;
 
-import homework11.entity.Family;
+import homework11.entity.family.Family;
 
 import java.util.ArrayList;
 import java.util.List;
