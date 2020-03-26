@@ -28,7 +28,7 @@ public class Human {
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-        this.schedule = schedule;
+//        this.schedule = schedule;
     }
 
 

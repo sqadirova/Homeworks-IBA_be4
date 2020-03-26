@@ -1,8 +1,8 @@
 package homework10.controller;
 
-import homework10.Family.Family;
-import homework10.Human.Human;
-import homework10.Pet.Pet;
+import homework10.entity.Family;
+import homework10.entity.Human;
+import homework10.entity.Pet;
 import homework10.service.FamilyService;
 
 import java.text.ParseException;

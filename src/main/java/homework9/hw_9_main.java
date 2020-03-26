@@ -1,9 +1,9 @@
 package homework9;
 
-import homework9.Family.Family;
-import homework9.Human.Human;
-import homework9.Pet.Dog;
-import homework9.Pet.Pet;
+import homework9.entity.Family;
+import homework9.entity.Human;
+import homework9.pet.Dog;
+import homework9.entity.Pet;
 import homework9.controller.FamilyController;
 
 import java.util.HashSet;

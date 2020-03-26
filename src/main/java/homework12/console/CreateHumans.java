@@ -1,16 +1,16 @@
 package homework12.console;
 
-import homework12.Human.Human;
-import homework12.Human.Man;
-import homework12.Human.Woman;
-import homework12.io.Console;
-import homework12.io.ImplConsole;
+import homework12.entity.Human;
+import homework12.human.Man;
+import homework12.human.Woman;
+import homework12.io.ConsoleMethods;
+import homework12.io.ImplConsoleMethods;
 
 import java.util.Scanner;
 
 public class CreateHumans {
     
-    Console cons=new ImplConsole(new Scanner(System.in));
+    ConsoleMethods cons=new ImplConsoleMethods(new Scanner(System.in));
 //    long epoch;
 //
 //    public long birthDatetoLong(String date){

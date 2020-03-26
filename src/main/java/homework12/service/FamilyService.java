@@ -1,12 +1,11 @@
 package homework12.service;
 
-import homework12.Family.CollectionFamilyDao;
-import homework12.Family.Family;
-import homework12.Family.FamilyDAO;
-import homework12.Human.Human;
-import homework12.Pet.Pet;
+import homework12.dao.CollectionFamilyDao;
+import homework12.entity.Family;
+import homework12.dao.FamilyDAO;
+import homework12.entity.Human;
+import homework12.entity.Pet;
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;

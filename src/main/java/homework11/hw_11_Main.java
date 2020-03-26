@@ -1,9 +1,9 @@
 package homework11;
 
-import homework11.Family.Family;
-import homework11.Human.Human;
-import homework11.Pet.Dog;
-import homework11.Pet.Pet;
+import homework11.entity.Family;
+import homework11.entity.Human;
+import homework11.pet.Dog;
+import homework11.entity.Pet;
 import homework11.controller.FamilyController;
 
 import java.text.ParseException;

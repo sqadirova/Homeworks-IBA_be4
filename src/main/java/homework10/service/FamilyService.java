@@ -1,11 +1,11 @@
 package homework10.service;
 
 
-import homework10.Family.CollectionFamilyDao;
-import homework10.Family.Family;
-import homework10.Family.FamilyDAO;
-import homework10.Human.Human;
-import homework10.Pet.Pet;
+import homework10.dao.CollectionFamilyDao;
+import homework10.entity.Family;
+import homework10.dao.FamilyDAO;
+import homework10.entity.Human;
+import homework10.entity.Pet;
 
 import java.text.ParseException;
 import java.time.LocalDate;

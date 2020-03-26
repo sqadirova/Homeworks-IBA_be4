@@ -1,8 +1,8 @@
 package homework9.controller;
 
-import homework9.Family.Family;
-import homework9.Human.Human;
-import homework9.Pet.Pet;
+import homework9.entity.Family;
+import homework9.entity.Human;
+import homework9.entity.Pet;
 import homework9.service.FamilyService;
 
 import java.util.List;

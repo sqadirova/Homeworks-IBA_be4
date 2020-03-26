@@ -1,8 +1,7 @@
 package homework12.console;
 
-
-import homework12.io.Console;
-import homework12.io.ImplConsole;
+import homework12.io.ConsoleMethods;
+import homework12.io.ImplConsoleMethods;
 
 import java.util.*;
 
@@ -10,7 +9,7 @@ public class ConsoleApp {
     List<Command> commands=new ArrayList<>();
     Optional<Command> command;
     //I dont understand why its red but it work =)   ???
-    Console console = new ImplConsole(new Scanner(System.in));
+    ConsoleMethods console = new ImplConsoleMethods(new Scanner(System.in));
     Menu menu = new Menu();
     boolean isExit = false;
     int number = 0;

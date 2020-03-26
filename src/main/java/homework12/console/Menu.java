@@ -1,7 +1,7 @@
 package homework12.console;
 
-import homework12.io.Console;
-import homework12.io.ImplConsole;
+import homework12.io.ConsoleMethods;
+import homework12.io.ImplConsoleMethods;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class Menu {
 
     public static StringBuilder menu= new StringBuilder();
     final static String dashes = new String(new char[30]).replace("\0", "-");
-    public static Console console = new ImplConsole(new Scanner(System.in));
+    public static ConsoleMethods console = new ImplConsoleMethods(new Scanner(System.in));
 
     static {
         generateMenu();

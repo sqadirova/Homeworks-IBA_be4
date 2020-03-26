@@ -1,6 +1,6 @@
 package homework12.console;
 
-import homework12.Human.Human;
+import homework12.entity.Human;
 
 public class CreateNewFamily extends CreateHumans implements Command {
     @Override

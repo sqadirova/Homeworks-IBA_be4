@@ -1,9 +1,9 @@
 package homework12.console;
 
 
-import homework12.Human.Human;
-import homework12.Family.Family;
-import homework12.Pet.DomesticCat;
+import homework12.entity.Human;
+import homework12.entity.Family;
+import homework12.pet.DomesticCat;
 
 import java.util.Arrays;
 import java.util.HashSet;
