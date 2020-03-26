@@ -131,7 +131,7 @@ public class Family {
     }
 
     public int countFamily() {
-        return countOfChildren + 2;
+        return getChildren().size()+2;
     }
 
     @Override

@@ -5,11 +5,13 @@ import homework12.entity.family.Family;
 import homework12.dao.FamilyDAO;
 import homework12.entity.human.Human;
 import homework12.entity.pet.Pet;
+import homework12.exception.PetOverFlowException;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 public class FamilyService {
@@ -59,11 +61,12 @@ public class FamilyService {
 
     public void deleteAllChildrenOlderThen(int age) {
         dao.getAllFamilies().forEach(family -> {
-            List<Human> newChildrenList = family.getChildren().stream()
+            List<Human> newChildrenList = new CopyOnWriteArrayList<Human>();
+            newChildrenList.addAll(family.getChildren().stream()
                     //.filter(child -> !(child.getBirthdate() > year))
-                    .filter((child) -> ChronoUnit.YEARS.between(child.getAge(), LocalDate.now())<age)
-                    .collect(Collectors.toList());
-           // family.setChildren(newChildrenList);
+                    .filter((child) -> ChronoUnit.YEARS.between(child.getAge(), LocalDate.now()) < age)
+                    .collect(Collectors.toList()));
+            family.setChildren(newChildrenList);
             dao.saveFamily(family);
         });
     }
@@ -75,7 +78,10 @@ public class FamilyService {
     public Family getFamilyById(int index) {
         return dao.getFamilyByIndex(index);
     }
-    public Family getFamilyByObj(Family family){return dao.getFamilyByObj(family);}
+
+    public Family getFamilyByObj(Family family) {
+        return dao.getFamilyByObj(family);
+    }
 
     public List<Pet> getPets(int indexOfFamily) {
         List<Pet> petList = new ArrayList<>(dao.getFamilyByIndex(indexOfFamily).getPet());
@@ -83,17 +89,12 @@ public class FamilyService {
     }
 
     public void addPet(int indexOfFamily, Pet pet) {
-        getFamilyById(indexOfFamily).getPet().add(pet);
-        dao.saveFamily(getFamilyById(indexOfFamily));
-
-    }
-
-
-    public void addPetByObj(Family family, Pet pet) {
-//        getFamilyById(indexOfFamily).getPet().add(pet);
-//        dao.saveFamily(getFamilyById(indexOfFamily));
-
-
+        try {
+            getFamilyById(indexOfFamily).getPet().add(pet);
+            dao.saveFamily(getFamilyById(indexOfFamily));
+        } catch (PetOverFlowException ex) {
+            throw new PetOverFlowException("Pets count for one family is over f!");
+        }
     }
 
 }
