@@ -13,10 +13,11 @@ public class IsPalindrome {
       sum = (sum * 10) + r;
       n = n / 10;
     }
-    if (temp == sum)
-      return true;
-    else
-      return false;
+//    if (temp == sum)
+//      return true;
+//    else
+//      return false;
+    return temp==sum;
   }
 }
 
