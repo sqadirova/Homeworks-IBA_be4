@@ -16,8 +16,7 @@ public class BinarySearchApp {
       count++;
       int mid = (start + end) / 2;
       if (array[mid] == number) {
-        System.out.printf("Count of if: %d\n", count);
-        System.out.printf("The searched number is- %d\n",mid);
+        represent(count,array[mid],mid);
         return true;
       } else if (array[mid] > number) {
         end = mid - 1;
@@ -27,6 +26,11 @@ public class BinarySearchApp {
     }
 
     return false;
+  }
+
+  static void represent(int count,int number,int index){
+    System.out.printf("Count of if: %d\n", count);
+    System.out.printf("The searched number: %d \nindex of that number: %d\n",number,index);
   }
 
 
