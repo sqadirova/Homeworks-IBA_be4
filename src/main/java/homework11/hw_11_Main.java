@@ -77,6 +77,7 @@ public class hw_11_Main {
         familyController.addPet(1, dog1);
         System.out.println(familyController.getPets(1));
 
+
         familyController.deleteFamilyByIndex(2);
         System.out.printf("Families after deleting family with index 0 and count of families: %d\n",familyController.countOfFamilies());
         familyController.displayAllFamilies();
@@ -87,6 +88,8 @@ public class hw_11_Main {
         familyController.getFamiliesLessThan(5).forEach(System.out::println);
 
         System.out.println(familyController.countFamiliesWithMemberNumber(5));
+
+
 
     }
 

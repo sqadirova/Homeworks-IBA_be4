@@ -76,7 +76,7 @@ public class Family {
     }
 
     public int getCountOfChildren() {
-        return countOfChildren;
+        return getChildren().size();
     }
 
     @Override
@@ -129,7 +129,7 @@ public class Family {
     }
 
     public int countFamily() {
-        return countOfChildren + 2;
+        return getCountOfChildren() + 2;
     }
 
     @Override

@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -58,13 +59,22 @@ public class FamilyService {
         return family;
     }
 
+//    public void deleteAllChildrenOlderThen(int age) {
+//        dao.getAllFamilies().stream().forEach(family -> {
+//            List<Human> newChildrenList = family.getChildren().stream()
+//                    //.filter(child -> !(child.getBirthdate() > year))
+//                    .filter((child) -> ChronoUnit.YEARS.between(child.getAge(), LocalDate.now())<age)
+//                    .collect(Collectors.toList());
+//            family.setChildren(newChildrenList);
+//            dao.saveFamily(family);
+//        });
+//    }
+
     public void deleteAllChildrenOlderThen(int age) {
-        dao.getAllFamilies().stream().forEach(family -> {
-            List<Human> newChildrenList = family.getChildren().stream()
-                    //.filter(child -> !(child.getBirthdate() > year))
-                    .filter((child) -> ChronoUnit.YEARS.between(child.getAge(), LocalDate.now())<age)
-                    .collect(Collectors.toList());
-            family.setChildren(newChildrenList);
+       dao.getAllFamilies().forEach(family -> {
+            List<Human> children = family.getChildren();
+            children.removeIf(child -> ChronoUnit.YEARS.between(child.getAge(), LocalDate.now()) > age);
+            family.setChildren(children);
             dao.saveFamily(family);
         });
     }
