@@ -25,6 +25,7 @@ public class Human {
         this.name = name;
         this.surname = surname;
         this.birthdate = DataConverter.stringToMillis(birthdate);
+        this.iq=(int) (Math.random()*100);
 //        this.schedule = schedule;
 
     }
@@ -43,6 +44,7 @@ public class Human {
         this.surname = surname;
         this.birthdate = DataConverter.stringToMillis(birthdate);
         this.family = family;
+        this.iq=(int) (Math.random()*100);
     }
 
     //adoptedChild
