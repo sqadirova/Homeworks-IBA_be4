@@ -5,6 +5,7 @@ import homework10.entity.pet.Pet;
 import homework10.entity.family.Family;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
@@ -26,7 +27,7 @@ public class Human {
         this.name = name;
         this.surname = surname;
         this.birthdate = DataConverter.stringToMillis(birthdate);
-
+        this.iq= (int) (Math.random()*100);
     }
 
 //    public Human(String name, String surname, String birthdate, int iq) throws ParseException { //, Map<String, String> schedule
@@ -43,6 +44,7 @@ public class Human {
         this.surname = surname;
         this.birthdate = DataConverter.stringToMillis(birthdate);
         this.family = family;
+        this.iq= (int) (Math.random()*100);
     }
 
     //adoptedChild
@@ -132,6 +134,11 @@ public class Human {
                 " he is %s \n", pet.getSpecies(), pet.getAge(), petTricklevel);
     }
 
+    public String getAgeToFormat(){
+        SimpleDateFormat formatDate=new SimpleDateFormat("dd-MMM-yyyy");
+        return formatDate.format(birthdate);
+    }
+
     //Human{name='Michael',
     // surname='Karleone',
     // year=1977,
@@ -143,10 +150,9 @@ public class Human {
         return getClass().getSimpleName()+"{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", birthdate=" + DataConverter.formatToString(birthdate) +
+                ", birthdate=" + getAgeToFormat() +
                 ", iq=" + iq +
 //                ", schedule=" + schedule.toString() +
                 '}';
     }
-
 }
