@@ -75,7 +75,7 @@ public class Family {
     }
 
     public int getCountOfChildren() {
-        return countOfChildren;
+        return getChildren().size();
     }
 
     @Override

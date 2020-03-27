@@ -4,6 +4,7 @@ import homework12.converter.DataConverter;
 import homework12.entity.pet.Pet;
 import homework12.entity.family.Family;
 
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
@@ -144,6 +145,11 @@ public class Human {
                 " he is %s \n", pet.getSpecies(), pet.getAge(), petTricklevel);
     }
 
+    public String getAgeToFormat(){
+        SimpleDateFormat formatDate=new SimpleDateFormat("dd-MMM-yyyy");
+        return formatDate.format(birthdate);
+    }
+
     //Human{name='Michael',
     // surname='Karleone',
     // year=1977,
@@ -155,7 +161,7 @@ public class Human {
         return getClass().getSimpleName()+"{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", birthdate=" + DataConverter.formatToString(birthdate) +
+                ", birthdate=" + getAgeToFormat() +
                 ", iq=" + iq +
 //                ", schedule=" + schedule.toString() +
                 '}';
