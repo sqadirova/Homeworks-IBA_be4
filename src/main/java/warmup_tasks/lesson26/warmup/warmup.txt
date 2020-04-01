@@ -1,0 +1,6 @@
+minimal pair in random array
+generate random array
+find minimal adjacent pair in the array
+print it index
+print the elements
+
