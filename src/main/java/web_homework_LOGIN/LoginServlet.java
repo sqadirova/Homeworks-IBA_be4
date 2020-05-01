@@ -1,5 +1,6 @@
 package web_homework_LOGIN;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +22,23 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+
+        resp.setContentType("txt/html");
+
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        try(PrintWriter out=resp.getWriter()){
+            if (username.equals("user") && password.equals("123")){
+//                RequestDispatcher reqDisp = req.getRequestDispatcher("WelcomeServlet");
+//                reqDisp.forward(req,resp);
+                resp.sendRedirect("/welcome");
+            }else {
+                out.write("Sorry wrong username or password!");
+                RequestDispatcher reqDisp = req.getRequestDispatcher("login.html");
+                reqDisp.include(req,resp);
+            }
+        }
+
     }
 }

@@ -10,6 +10,7 @@ public class ServerApp {
         ServletContextHandler handler=new ServletContextHandler();
 
         handler.addServlet(new ServletHolder(new LoginServlet()),"/login/*");
+        handler.addServlet(new ServletHolder(new WelcomeServlet()),"/welcome/*");
 
         server.setHandler(handler);
         server.start();

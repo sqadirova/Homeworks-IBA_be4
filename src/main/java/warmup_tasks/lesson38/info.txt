@@ -1,0 +1,10 @@
+SQL 4
+=====
+
+Constraints
+ - Foreign keys
+
+Relations implementations
+ - 1:1
+ - 1:N
+ - M:N
